@@ -40,7 +40,7 @@ public class UIManager : MonoBehaviour
     {
         Time.timeScale = 1f;
         gameIsOver = false;
-        SceneManager.LoadScene("Scene");
+        SceneManager.LoadScene("Game");
     }
 
     private void Update()

@@ -21,7 +21,7 @@ public class destroyEnemy : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("BigEnemy"))
         {
-            Instantiate(die, transform.position, Quaternion.identity);
+            Instantiate(die, collision.contacts[0].point, Quaternion.identity);
             Destroy(gameObject);
         }
 

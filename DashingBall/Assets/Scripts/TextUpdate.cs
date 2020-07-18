@@ -16,10 +16,15 @@ public class TextUpdate : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && player.canMove() && !EventSystem.current.IsPointerOverGameObject() ||
-            Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began && player.canMove() && !EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId))
+        scoreText.text = player.score.ToString();
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Hitbox"))
         {
             scoreText.text = player.score.ToString();
         }
+        
     }
 }

@@ -16,10 +16,17 @@ public class Player : MonoBehaviour
 
     public float score = 0;
 
+    public ParticleSystem crashEffect;
+    AudioSource crash;
+
+    private void Awake()
+    {
+        crash = GetComponent<AudioSource>();
+    }
     void LateUpdate()
     {
-        if (Input.GetMouseButtonDown(0) && canMove() && !EventSystem.current.IsPointerOverGameObject() ||
-            Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began && canMove() && !EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId))
+        if (canMove() && Input.GetKeyDown(KeyCode.Mouse0) && !GameManager.IsPointerOverUIObject() ||
+            canMove() && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began && !GameManager.IsPointerOverUIObject())
         {
             dashing();
         }
@@ -35,6 +42,20 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("GameOver") || collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("BigEnemy"))
         {
             UIManager.gameIsOver = true;
+        }
+        if (collision.gameObject.CompareTag("Hitbox"))
+        {
+            score++;
+        }
+
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Hitbox"))
+        {
+            Instantiate(crashEffect, collision.contacts[0].point, Quaternion.identity);
+            crash.Play();
         }
     }
 

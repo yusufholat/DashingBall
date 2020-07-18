@@ -9,7 +9,7 @@ public class ReflectionController : MonoBehaviour
     public Player player;
 
     private Rigidbody2D rb;
-    private float distanceSpeed;
+    private float distance;
     private Vector2 movePos;
     private Vector2 lastVelocity;
 
@@ -20,18 +20,17 @@ public class ReflectionController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && player.canMove() && !EventSystem.current.IsPointerOverGameObject() ||
-            Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began && player.canMove() && !EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId))
+        if (player.canMove() && Input.GetKeyDown(KeyCode.Mouse0) && !GameManager.IsPointerOverUIObject() ||
+            player.canMove() && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began && !GameManager.IsPointerOverUIObject())
         {
             movePos = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-            distanceSpeed = Vector2.Distance(Camera.main.ScreenToWorldPoint(Input.mousePosition), transform.position);
+            distance = Vector2.Distance(Camera.main.ScreenToWorldPoint(Input.mousePosition), transform.position);
         }
-
     }
 
     void FixedUpdate()
     {
-        rb.velocity = movePos.normalized * distanceSpeed * player.playerSpeed;
+        rb.velocity = movePos.normalized * distance * player.playerSpeed;
         lastVelocity = rb.velocity;
     }
 
@@ -41,7 +40,7 @@ public class ReflectionController : MonoBehaviour
         {
             Vector2 wallNormal = collision.contacts[0].normal;
             movePos = Vector2.Reflect(lastVelocity, wallNormal).normalized;
-            movePos *= distanceSpeed;
+            movePos *= distance;
         }
 
         if (collision.gameObject.CompareTag("GameOver") || collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("BigEnemy"))
