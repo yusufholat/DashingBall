@@ -1,36 +1,71 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions.Must;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.Video;
 
+[System.Serializable]
 public class Player : MonoBehaviour
 {
-    public float playerSpeed;
-    public float maxHealth = 100;
-    public float currentHealth = 0;
-    public float incrementHealth = 0.15f;
-    public float dashSpend = 0;
-    public float energy = 0;
-
-    public float score = 0;
+    int maxHealth;
+    float currentHealth;
+    float dashSpend;
+    int energy;
+    float incrementHealth;
 
     public ParticleSystem crashEffect;
-    AudioSource crash;
+    public ParticleSystem dashEffect;
 
-    private void Awake()
+    string[] dashs = { "dash1", "dash2", "dash3", "dash4" };
+
+    private void Start()
     {
-        crash = GetComponent<AudioSource>();
+        GetComponent<SpriteRenderer>().sprite = SkinManager.instance.ShopItemList[PlayerPrefs.GetInt("CurrentSkin")].image;
+        PlayerManager.score = 0;
+        PlayerManager.maxHealth = 100;
+        PlayerManager.currentHealth = 100;
+        maxHealth = 100;
+        currentHealth = 100;
+        dashSpend = 20;
+        energy = 40;
+        incrementHealth = 0.25f;
     }
+
     void LateUpdate()
     {
-        if (canMove() && Input.GetKeyDown(KeyCode.Mouse0) && !GameManager.IsPointerOverUIObject() ||
-            canMove() && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began && !GameManager.IsPointerOverUIObject())
+        if (!GameManager.gameStarded)
         {
-            dashing();
+            if (menuUIManager.shopIsOpen)
+            {
+                if (Input.GetMouseButtonDown(0) && !GameManager.IsPointerOverUIObject() ||
+                Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began && !GameManager.IsPointerOverUIObject())
+                {
+                    Instantiate(dashEffect, transform.position, Quaternion.identity);
+                    FindObjectOfType<AudioManager>().Play(dashs[Random.Range(0, 4)]);
+                }
+            }
+            else
+            {
+                if (Input.GetMouseButtonDown(0) ||
+                Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+                {
+                    Instantiate(dashEffect, transform.position, Quaternion.identity);
+                    FindObjectOfType<AudioManager>().Play(dashs[Random.Range(0, 4)]);
+                }
+            }
+
         }
-        
+        else
+        {
+            if (canMove() && Input.GetKeyDown(KeyCode.Mouse0) && !GameManager.IsPointerOverUIObject() ||
+           canMove() && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began && !GameManager.IsPointerOverUIObject())
+            {
+                dashing();
+            }
+        }
     }
 
     void FixedUpdate() {
@@ -41,11 +76,12 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("GameOver") || collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("BigEnemy"))
         {
-            UIManager.gameIsOver = true;
+            GameManager.gameOver = true;
         }
         if (collision.gameObject.CompareTag("Hitbox"))
         {
-            score++;
+            if(GameManager.gameStarded)
+                PlayerManager.score++;
         }
 
     }
@@ -55,7 +91,9 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Hitbox"))
         {
             Instantiate(crashEffect, collision.contacts[0].point, Quaternion.identity);
-            crash.Play();
+
+            if(GameManager.gameStarded)
+            FindObjectOfType<AudioManager>().Play("PlayerBounce");
         }
     }
 
@@ -65,13 +103,27 @@ public class Player : MonoBehaviour
         {
             takeHealth();
         }
+        else if (collision.gameObject.CompareTag("AntiHealth"))
+        {
+            takeAntiHealth();
+        }
     }
 
     private void healthIncrease()
     {
         if (currentHealth < maxHealth)
+        {
             currentHealth += incrementHealth;
-        else currentHealth = maxHealth;
+            PlayerManager.currentHealth = currentHealth;
+        }
+
+        else
+        {
+            currentHealth = maxHealth;
+            PlayerManager.currentHealth = maxHealth;
+        }
+
+        
     }
 
     private void takeHealth()
@@ -81,12 +133,21 @@ public class Player : MonoBehaviour
             currentHealth = maxHealth;
     }
 
+    private void takeAntiHealth()
+    {
+        currentHealth -= energy;
+        if (currentHealth < 0)
+            currentHealth = 0;
+    }
+
     public void dashing() {
+        
         if (currentHealth > dashSpend) {
+            FindObjectOfType<AudioManager>().Play(dashs[Random.Range(0, 3)]);
+            Instantiate(dashEffect, transform.position, Quaternion.identity);
             currentHealth -= dashSpend;
-            score++;
+            PlayerManager.score++;
         }
-            
     }
     public bool canMove()
     {

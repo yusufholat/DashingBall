@@ -13,7 +13,7 @@ public class EnemySpawner : MonoBehaviour
 
     void Update()
     {
-        if(UIManager.gameIsStarded == true)
+        if(GameManager.gameStarded == true)
         Spawn();
     }
 

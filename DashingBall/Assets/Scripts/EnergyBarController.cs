@@ -5,7 +5,6 @@ using UnityEngine.EventSystems;
 
 public class EnergyBarController : MonoBehaviour
 {
-    public Player player;
     EnergyBar energyBar;
     Animator energyBarAnim;
     void Awake()
@@ -16,15 +15,15 @@ public class EnergyBarController : MonoBehaviour
 
     void Start()
     {
-        energyBar.SetMaxHealth(player.maxHealth);
+        energyBar.SetMaxHealth(PlayerManager.maxHealth);
     }
 
     void Update()
     {
-        energyBar.SetHealth(player.currentHealth);
+        energyBar.SetHealth(PlayerManager.currentHealth);
 
-        if (!UIManager.gameIsPaused && Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject() ||
-            !UIManager.gameIsPaused && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began && !EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId))
+        if (!GameManager.gamePaused && Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject() ||
+            !GameManager.gamePaused && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began && !EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId))
         {
             energyBarAnim.Play("dashanimation");
         }

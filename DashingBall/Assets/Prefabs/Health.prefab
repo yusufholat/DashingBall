@@ -70,7 +70,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6f291df4d7db5f74e9b00546d3e42e92, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5ae140f9b0a11614ea52e901b7fd25b5, type: 3}
   m_Color: {r: 0, g: 1, b: 0.058346033, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -303,7 +303,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      maxColor: {r: 0, g: 1, b: 0.058823533, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -4845,8 +4845,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1776268763418150458}
   - component: {fileID: 1776268763418150457}
-  - component: {fileID: 2802452606962951731}
   - component: {fileID: 6737732626772986743}
+  - component: {fileID: 8082893258479011346}
   m_Layer: 0
   m_Name: Health
   m_TagString: Health
@@ -4863,7 +4863,7 @@ Transform:
   m_GameObject: {fileID: 1776268763418150459}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 1776268761816106808}
   - {fileID: 1776268761996997406}
@@ -4889,22 +4889,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!58 &2802452606962951731
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1776268763418150459}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 2
 --- !u!114 &6737732626772986743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4917,4 +4901,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c003c2a810d8aa43bec5b084f97942e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeTime: 7
+  lifeTime: 5
+--- !u!68 &8082893258479011346
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1776268763418150459}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 0.017134745, y: -4.6271267}
+  - {x: -1.9560128, y: -2.0759287}
+  - {x: -3.2421024, y: -2.574096}
+  - {x: -0.0028065466, y: 4.622571}
+  - {x: 3.2324305, y: -2.5686474}
+  - {x: 1.9534464, y: -2.0635514}
+  - {x: 0.0105683, y: -4.629758}

@@ -37,4 +37,18 @@ public class Enemy : MonoBehaviour
             Instantiate(bigEnemy, collision.contacts[0].point, Quaternion.identity);
         }
     }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Freeze")) {
+            speed = 2.5f;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Freeze"))
+        {
+            speed = 5f;
+        }
+    }
 }

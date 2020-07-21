@@ -9,6 +9,9 @@ TagManager:
   - Enemy
   - BigEnemy
   - Health
+  - Freeze
+  - Snow
+  - AntiHealth
   layers:
   - Default
   - TransparentFX

@@ -5,57 +5,64 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
-    public static bool gameIsStarded = true;
-    public static bool gameIsPaused = false;
-    public static bool gameIsOver = false;
-
-    public GameObject pauseMenuUI;
     public GameObject energyBarUI;
+    public GameObject pauseMenuUI; 
     public GameObject pauseButtonUI;
     public GameObject scoreTextUI;
-    public GameObject gameOverUI;
+    public GameObject gameOverMenu;
 
     public GameObject player;
 
     public void Resume()
     {
-        if(gameIsPaused == true)
+        if(GameManager.gamePaused == true)
         {
             Time.timeScale = 1f;
             pauseMenuUI.SetActive(false);
             pauseButtonUI.SetActive(true);
-            gameIsPaused = false;
+            GameManager.gamePaused = false;
         }
     }
 
-    public void pauseGame()
+    public void Pause()
     {
         Time.timeScale = 0f;
         pauseMenuUI.SetActive(true);
-        pauseButtonUI.SetActive(false);
-        gameIsPaused = true;
+        //pauseButtonUI.SetActive(false);
+        GameManager.gamePaused = true;
     }
 
     public void restartGame()
     {
         Time.timeScale = 1f;
-        gameIsOver = false;
+        GameManager.gameOver = false;
         SceneManager.LoadScene("Game");
     }
 
     private void Update()
     {
-        if(gameIsOver == true)
+        if(GameManager.gameOver == true)
         {
-            Time.timeScale = 0.25f;
-            gameOverUI.SetActive(true);
+            //if(GameManager.vibrationOn)
+            //Handheld.Vibrate();
+
+            Time.timeScale = 0.1f;
+            int newcoin = PlayerManager.score + PlayerPrefs.GetInt("TotalCoin" , 1000);
+
+            PlayerPrefs.SetInt("TotalCoin", newcoin);
+            PlayerManager.totalCoin = newcoin;
+
+            gameOverMenu.SetActive(true);
             pauseButtonUI.SetActive(false);
+
+            GameManager.gameOver = false;
         }
     }
 
     public void goToMenu()
     {
-        gameIsOver = false;
+        GameManager.gameStarded = false;
+        GameManager.gameOver = false;
         Time.timeScale = 1f;
         SceneManager.LoadScene("Menu");
     }

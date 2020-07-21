@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class TextUpdate : MonoBehaviour
 {
-    public Player player;
+ 
     Text scoreText;
     void Start()
     {
@@ -16,14 +16,14 @@ public class TextUpdate : MonoBehaviour
 
     void Update()
     {
-        scoreText.text = player.score.ToString();
+        scoreText.text = PlayerManager.score.ToString();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Hitbox"))
         {
-            scoreText.text = player.score.ToString();
+            scoreText.text = PlayerManager.score.ToString();
         }
         
     }

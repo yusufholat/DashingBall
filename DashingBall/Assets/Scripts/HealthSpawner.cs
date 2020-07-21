@@ -20,7 +20,7 @@ public class HealthSpawner : MonoBehaviour
 
     void Update()
     {
-        if (UIManager.gameIsStarded == true)
+        if (GameManager.gameStarded == true)
             spawnHealth();
     }
 
