@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     public static bool vibrationOn = true;
     public static bool MenuMusicPlaying;
 
-    static GameManager instance;
+    public static GameManager instance;
     private void Awake()
     {
         if (instance == null)

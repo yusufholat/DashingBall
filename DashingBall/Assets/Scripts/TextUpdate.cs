@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SocialPlatforms.Impl;
@@ -8,10 +9,10 @@ using UnityEngine.UI;
 public class TextUpdate : MonoBehaviour
 {
  
-    Text scoreText;
+    TextMeshProUGUI scoreText;
     void Start()
     {
-        scoreText = GetComponent<Text>();
+        scoreText = GetComponent<TextMeshProUGUI>();
     }
 
     void Update()
@@ -24,7 +25,6 @@ public class TextUpdate : MonoBehaviour
         if (collision.gameObject.CompareTag("Hitbox"))
         {
             scoreText.text = PlayerManager.score.ToString();
-        }
-        
+        }        
     }
 }

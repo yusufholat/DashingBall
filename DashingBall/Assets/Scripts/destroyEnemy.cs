@@ -25,6 +25,13 @@ public class destroyEnemy : MonoBehaviour
             Destroy(gameObject);
         }
 
+        if (collision.gameObject.CompareTag("BlackHoleArea"))
+        {
+            Instantiate(die, collision.contacts[0].point, Quaternion.identity);
+            Destroy(gameObject);
+        }
 
     }
+
+
 }

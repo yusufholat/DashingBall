@@ -8,10 +8,10 @@ public class ReflectionController : MonoBehaviour
 {
     Player player;
 
-    private Rigidbody2D rb;
-    private float distanceSpeed;
-    private Vector2 movePos;
-    private Vector2 lastVelocity;
+    Rigidbody2D rb;
+    float distanceSpeed;
+    Vector2 movePos;
+    Vector2 lastVelocity;
 
     void Awake()
     {

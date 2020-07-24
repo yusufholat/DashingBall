@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,8 +12,7 @@ public class UIManager : MonoBehaviour
     public GameObject scoreTextUI;
     public GameObject gameOverMenu;
 
-    public GameObject player;
-
+    public TextMeshProUGUI gameOverText;
     public void Resume()
     {
         if(GameManager.gamePaused == true)
@@ -46,15 +46,15 @@ public class UIManager : MonoBehaviour
             //if(GameManager.vibrationOn)
             //Handheld.Vibrate();
 
-            Time.timeScale = 0.1f;
-            int newcoin = PlayerManager.score + PlayerPrefs.GetInt("TotalCoin" , 1000);
+            Time.timeScale = 0.2f;
+            int newcoin = PlayerManager.score + PlayerPrefs.GetInt("TotalCoin" , 3000);
 
             PlayerPrefs.SetInt("TotalCoin", newcoin);
             PlayerManager.totalCoin = newcoin;
+            gameOverText.text = PlayerManager.score.ToString();
 
+            scoreTextUI.SetActive(false);
             gameOverMenu.SetActive(true);
-            pauseButtonUI.SetActive(false);
-
             GameManager.gameOver = false;
         }
     }

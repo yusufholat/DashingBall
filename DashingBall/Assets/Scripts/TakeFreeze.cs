@@ -8,10 +8,10 @@ public class TakeFreeze : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Snow"))
-        {
-            Destroy(collision.gameObject);
-            Instantiate(effect, collision.transform.position, Quaternion.identity);
-        }
+        //if (collision.gameObject.CompareTag("BlackHole"))
+        //{
+        //    Destroy(collision.gameObject);
+        //    Instantiate(effect, collision.transform.position, Quaternion.identity);
+        //}
     }
 }

@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.Video;
 
-[System.Serializable]
+
 public class Player : MonoBehaviour
 {
     int maxHealth;
@@ -18,21 +18,26 @@ public class Player : MonoBehaviour
 
     public ParticleSystem crashEffect;
     public ParticleSystem dashEffect;
+    public ParticleSystem deadEffect;
+
+    public GameObject plus5Text;
 
     string[] dashs = { "dash1", "dash2", "dash3", "dash4" };
 
     private void Start()
     {
-        GetComponent<SpriteRenderer>().sprite = SkinManager.instance.ShopItemList[PlayerPrefs.GetInt("CurrentSkin")].image;
+        GetComponent<SpriteRenderer>().sprite = SkinManager.instance.ShopItemList[PlayerPrefs.GetInt("CurrentSkin", 0)].image;
         PlayerManager.score = 0;
         PlayerManager.maxHealth = 100;
         PlayerManager.currentHealth = 100;
+        PlayerManager.goldenEnergyPower = false;
         maxHealth = 100;
         currentHealth = 100;
         dashSpend = 20;
         energy = 40;
         incrementHealth = 0.25f;
     }
+
 
     void LateUpdate()
     {
@@ -56,13 +61,17 @@ public class Player : MonoBehaviour
                     FindObjectOfType<AudioManager>().Play(dashs[Random.Range(0, 4)]);
                 }
             }
-
         }
         else
         {
             if (canMove() && Input.GetKeyDown(KeyCode.Mouse0) && !GameManager.IsPointerOverUIObject() ||
            canMove() && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began && !GameManager.IsPointerOverUIObject())
             {
+                FindObjectOfType<AudioManager>().Play(dashs[Random.Range(0, 3)]);
+                Instantiate(dashEffect, transform.position, Quaternion.identity);
+                PlayerManager.score++;
+
+                if (!PlayerManager.goldenEnergyPower)
                 dashing();
             }
         }
@@ -72,10 +81,47 @@ public class Player : MonoBehaviour
         healthIncrease();
     }
 
+    private void healthIncrease()
+    {
+        if (currentHealth < maxHealth)
+        {
+            currentHealth += incrementHealth;
+            PlayerManager.currentHealth = currentHealth;
+        }
+        else
+        {
+            currentHealth = maxHealth;
+            PlayerManager.currentHealth = maxHealth;
+        }
+    }
+
+    public void dashing()
+    {
+        if (currentHealth > dashSpend)
+        {
+            currentHealth -= dashSpend;
+        }
+    }
+
+    public bool canMove()
+    {
+        if (PlayerManager.goldenEnergyPower)
+            return true;
+
+        if (currentHealth > dashSpend)
+            return true;
+        else return false;
+    }
+
+
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("GameOver") || collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("BigEnemy"))
+        if (collision.gameObject.CompareTag("GameOver") || collision.gameObject.CompareTag("Enemy") || 
+            collision.gameObject.CompareTag("BigEnemy") || collision.gameObject.CompareTag("BlackHoleArea"))
         {
+            Destroy(gameObject);
+            Instantiate(deadEffect, transform.position, Quaternion.identity);
             GameManager.gameOver = true;
         }
         if (collision.gameObject.CompareTag("Hitbox"))
@@ -107,24 +153,28 @@ public class Player : MonoBehaviour
         {
             takeAntiHealth();
         }
-    }
-
-    private void healthIncrease()
-    {
-        if (currentHealth < maxHealth)
+        else if (collision.gameObject.CompareTag("GoldenEnergy"))
         {
-            currentHealth += incrementHealth;
-            PlayerManager.currentHealth = currentHealth;
+            takeGoldenEnergy();
         }
-
-        else
+        if (collision.gameObject.CompareTag("BlackHole"))
         {
-            currentHealth = maxHealth;
-            PlayerManager.currentHealth = maxHealth;
+            takeBlackHole();
         }
-
         
     }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("EnemySecondHitbox"))
+        {
+            Instantiate(plus5Text, collision.transform.position, Quaternion.identity);
+            PlayerManager.score += 5;
+        }
+    }
+
+
+
 
     private void takeHealth()
     {
@@ -140,20 +190,14 @@ public class Player : MonoBehaviour
             currentHealth = 0;
     }
 
-    public void dashing() {
-        
-        if (currentHealth > dashSpend) {
-            FindObjectOfType<AudioManager>().Play(dashs[Random.Range(0, 3)]);
-            Instantiate(dashEffect, transform.position, Quaternion.identity);
-            currentHealth -= dashSpend;
-            PlayerManager.score++;
-        }
-    }
-    public bool canMove()
+    private void takeGoldenEnergy()
     {
-        if (currentHealth > dashSpend)
-            return true;
-        else return false;
+        PlayerManager.instance.takeGoldenEnergy();
+    }
+
+    private void takeBlackHole()
+    {
+        PlayerManager.instance.takeBlackHole();
     }
 
 }

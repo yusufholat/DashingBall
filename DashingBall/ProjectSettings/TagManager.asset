@@ -9,9 +9,12 @@ TagManager:
   - Enemy
   - BigEnemy
   - Health
-  - Freeze
-  - Snow
   - AntiHealth
+  - GoldenEnergy
+  - BlackHole
+  - BlackHoleArea
+  - TimeFreeze
+  - EnemySecondHitbox
   layers:
   - Default
   - TransparentFX

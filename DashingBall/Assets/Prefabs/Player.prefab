@@ -16,8 +16,9 @@ GameObject:
   - component: {fileID: 3690313438541755435}
   - component: {fileID: 3690313438541755431}
   - component: {fileID: 3690313438541755434}
-  - component: {fileID: 3690313438541755437}
   - component: {fileID: 6150251860227512467}
+  - component: {fileID: 3736949962097877051}
+  - component: {fileID: 7954295049803785231}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -32,9 +33,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3690313438541755427}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -4, z: 0}
-  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
+  m_LocalScale: {x: 0.16, y: 0.16, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -78,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0142d6e78f585724d8475883d5baa824, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2bb655cab81d1d54c9d860034a68a20b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -169,7 +170,7 @@ TrailRenderer:
   m_Time: 0.3
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.7
+    widthMultiplier: 0.8
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -260,6 +261,10 @@ MonoBehaviour:
     type: 3}
   dashEffect: {fileID: 6791991852996383515, guid: 5e5e512bc79b39747a2f786d8688852f,
     type: 3}
+  deadEffect: {fileID: 2705436243262502308, guid: 28d3ad3bab5ac6b4f9ce23b7343ef079,
+    type: 3}
+  plus5Text: {fileID: 1662375446543182581, guid: 223314b005ef6a9479f77580516f48dc,
+    type: 3}
 --- !u!114 &3690313438541755434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -272,21 +277,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 847f86c63def93243b6070add68303fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lastHealthEffect: {fileID: 6245529357772347829, guid: 4f0c8d255c7434a4c9c8bf3f6c5a00d5,
-    type: 3}
---- !u!114 &3690313438541755437
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3690313438541755427}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d818331700231ac4b8ef08fe5b7c689c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  effect: {fileID: 6854727594438682191, guid: 63de143a6612e7a4dbf37cebf0f69f58, type: 3}
 --- !u!114 &6150251860227512467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -299,5 +289,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9ea9f15a41c6174c84c1a68064fe1ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lastHealthEffect: {fileID: 6245529357772347829, guid: 4f0c8d255c7434a4c9c8bf3f6c5a00d5,
+--- !u!114 &3736949962097877051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3690313438541755427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ffc9c4b59617f64a8e9f3c2ae9c51a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7954295049803785231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3690313438541755427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ed4f9d1f019c5a4d9ad62dc4a7ebcb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blackHoleArea: {fileID: 30562899624269433, guid: 20a594b8c08f42445a7397b3cdfe35ac,
     type: 3}

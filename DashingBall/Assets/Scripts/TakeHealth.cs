@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class TakeHealth : MonoBehaviour
 {
-    public ParticleSystem lastHealthEffect;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Health"))
         {
             Destroy(collision.gameObject);
-            Instantiate(lastHealthEffect, collision.transform.position, Quaternion.identity);
+            EffectManager.PlayAnim("TakeEnergy");
         }
     }
 }
