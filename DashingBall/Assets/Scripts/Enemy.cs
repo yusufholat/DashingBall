@@ -12,6 +12,8 @@ public class Enemy : MonoBehaviour
 
     public GameObject bigEnemy;
 
+    float lerpSpeed = 12f;
+    float firstSpeed;
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -20,11 +22,23 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         randomMovePos = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 0f));
+        firstSpeed = speed;
     }
 
     private void Update()
     {
-        
+        if (PlayerManager.timeFreezePower)
+        {
+            speed -= Time.deltaTime * lerpSpeed;
+            if (speed < 0)
+                speed = 0;
+        }
+        else
+        {
+            speed += Time.deltaTime * lerpSpeed;
+            if (speed > firstSpeed)
+                speed = firstSpeed;
+        }
     }
 
     void FixedUpdate() {
@@ -34,7 +48,7 @@ public class Enemy : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Hitbox") || collision.gameObject.CompareTag("GameOver")) {
+        if (collision.gameObject.CompareTag("Hitbox") || collision.gameObject.CompareTag("GameOver")){
             Vector2 wallNormal = collision.contacts[0].normal;
             randomMovePos = Vector2.Reflect(lastVelocity, wallNormal).normalized;
         }
@@ -42,4 +56,5 @@ public class Enemy : MonoBehaviour
             Instantiate(bigEnemy, collision.contacts[0].point, Quaternion.identity);
         }
     }
+
 }

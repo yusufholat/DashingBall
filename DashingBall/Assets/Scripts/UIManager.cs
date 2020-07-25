@@ -12,58 +12,67 @@ public class UIManager : MonoBehaviour
     public GameObject scoreTextUI;
     public GameObject gameOverMenu;
 
-    public TextMeshProUGUI gameOverText;
-    public void Resume()
-    {
-        if(GameManager.gamePaused == true)
-        {
-            Time.timeScale = 1f;
-            pauseMenuUI.SetActive(false);
-            pauseButtonUI.SetActive(true);
-            GameManager.gamePaused = false;
-        }
-    }
+    public TextMeshProUGUI gameOverHighScoreText;
+    public TextMeshProUGUI gameOverScoreText;
 
-    public void Pause()
+    Animator transition;
+
+    //public void Resume()
+    //{
+    //    Time.timeScale = 1f;
+    //    pauseMenuUI.SetActive(false);
+    //    pauseButtonUI.SetActive(true);
+
+    //}
+
+    //public void Pause()
+    //{
+    //    Time.timeScale = 0f;
+    //    pauseMenuUI.SetActive(true);
+    //}
+
+    private void Start()
     {
-        Time.timeScale = 0f;
-        pauseMenuUI.SetActive(true);
-        //pauseButtonUI.SetActive(false);
-        GameManager.gamePaused = true;
+        transition = GetComponent<Animator>();    
     }
 
     public void restartGame()
     {
+        StartCoroutine(Restart());
+    }
+
+    IEnumerator Restart()
+    {
         Time.timeScale = 1f;
-        GameManager.gameOver = false;
-        SceneManager.LoadScene("Game");
+        transition.SetTrigger("restart");
+        yield return new WaitForSeconds(1f);
+        GameManager.instance.restartGame();
     }
 
     private void Update()
     {
         if(GameManager.gameOver == true)
         {
-            //if(GameManager.vibrationOn)
-            //Handheld.Vibrate();
+            GameManager.instance.GameOver();
 
-            Time.timeScale = 0.2f;
-            int newcoin = PlayerManager.score + PlayerPrefs.GetInt("TotalCoin" , 3000);
-
-            PlayerPrefs.SetInt("TotalCoin", newcoin);
-            PlayerManager.totalCoin = newcoin;
-            gameOverText.text = PlayerManager.score.ToString();
+            gameOverHighScoreText.text = PlayerPrefs.GetInt("HighScore", 0).ToString();
+            gameOverScoreText.text = PlayerManager.score.ToString();
 
             scoreTextUI.SetActive(false);
             gameOverMenu.SetActive(true);
-            GameManager.gameOver = false;
         }
     }
 
     public void goToMenu()
     {
-        GameManager.gameStarded = false;
-        GameManager.gameOver = false;
+        StartCoroutine(GoToMenu());        
+    }
+
+    IEnumerator GoToMenu()
+    {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("Menu");
+        transition.SetTrigger("restart");
+        yield return new WaitForSeconds(1f); 
+        GameManager.instance.goToMenu();
     }
 }

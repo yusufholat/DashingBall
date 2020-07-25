@@ -25,7 +25,7 @@ public class BlackHoleSpawner : MonoBehaviour
 
     void Update()
     {
-        if (GameManager.gameStarded == true)
+        if (GameManager.gameStarded == true && GameManager.gameDifficulty >= 2)
             spawnBlackHole();
     }
 

@@ -98,10 +98,11 @@ public class menuUIManager : MonoBehaviour
     }
 
     public void openShop()
-    {    
-        StartMenu.SetActive(false);
-        ShopMenuPanel.SetActive(true);
+    {
+        //StartMenu.SetActive(false);
+        //ShopMenuPanel.SetActive(true);
 
+        transition.SetTrigger("openshop");
         if(settingsMenuIsOpen == true)
         {
             settingMenuAnimator.SetTrigger("off");
@@ -112,8 +113,7 @@ public class menuUIManager : MonoBehaviour
 
     public void closeShop()
     {
-        ShopMenuPanel.SetActive(false);
-        StartMenu.SetActive(true);
+        transition.SetTrigger("closeshop");
         shopIsOpen = false;
     }
 }

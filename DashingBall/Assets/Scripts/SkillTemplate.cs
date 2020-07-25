@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SkillTemplate : MonoBehaviour
 {
@@ -11,17 +12,20 @@ public class SkillTemplate : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
-        cooldown = float.Parse(transform.GetChild(1).GetComponent<TextMeshProUGUI>().text);
+        cooldown = transform.GetChild(1).GetComponent<Slider>().maxValue;
+
+
     }
 
     void Update()
     {
         if (cooldown >= 0)
-        transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = cooldown.ToString("0.0");
+        {
+            transform.GetChild(1).GetComponent<Slider>().value = cooldown;
+        }        
         else
         {
             anim.SetTrigger("end");
-            EffectManager.PlayAnim("DefaultEffect");
             Destroy(gameObject, 1f);
         }
 

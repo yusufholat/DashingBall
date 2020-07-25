@@ -18,6 +18,7 @@ public class PlayerManager : MonoBehaviour
 
 
     public static bool goldenEnergyPower = false;
+    public static bool timeFreezePower = false;
 
     private void Awake()
     {
@@ -47,6 +48,8 @@ public class PlayerManager : MonoBehaviour
         instantiatedPlayer.GetComponent<SpriteRenderer>().sprite = SkinManager.instance.ShopItemList[PlayerPrefs.GetInt("CurrentSkin", 0)].image;
     }
 
+
+
     public void takeGoldenEnergy()
     {
         goldenEnergyPower = true;
@@ -57,11 +60,35 @@ public class PlayerManager : MonoBehaviour
     IEnumerator resetGoldenEnergy()
     {
         yield return new WaitForSeconds(SkillManager.instance.getCooldown("GoldenEnergy"));
+        EffectManager.PlayAnim("DefaultEffect");
         goldenEnergyPower = false;
     }
+
 
     public void takeBlackHole()
     {
         TakenSkillManager.instance.ShowSkill("BlackHole");
+    }
+
+
+
+    public void takeTimeFreeze()
+    {
+        timeFreezePower = true;
+        TakenSkillManager.instance.ShowSkill("TimeFreeze");
+        StartCoroutine(resetTimeFreeze());
+    }
+
+    IEnumerator resetTimeFreeze()
+    {
+        yield return new WaitForSeconds(SkillManager.instance.getCooldown("TimeFreeze"));
+        EffectManager.PlayAnim("DefaultEffect");
+        timeFreezePower = false;
+    }
+
+
+    public void takeShield()
+    {
+        TakenSkillManager.instance.ShowSkill("Shield");
     }
 }

@@ -8,12 +8,12 @@ public class EnemySpawner : MonoBehaviour
     Vector2 whereToSpawn;
     float randX;
 
-    public float spawnRate;
+    public static float spawnRate = 2f;
     float nextSpawn = 0;
 
     void Update()
     {
-        if(GameManager.gameStarded == true)
+        if(GameManager.gameStarded && !PlayerManager.timeFreezePower)
         Spawn();
     }
 

@@ -25,7 +25,7 @@ public class EnergySpawner : MonoBehaviour
 
     void Update()
     {
-        if (GameManager.gameStarded == true)
+        if (GameManager.gameStarded == true && GameManager.gameDifficulty >= 1)
             spawnHealth();
     }
 

@@ -49,16 +49,20 @@ public class ShopManager : MonoBehaviour
         {
             item = Instantiate(shopItemTemplate, shopScrollView);
             item.transform.GetChild(0).GetComponent<Image>().sprite = ShopItemList[i].image;
-            item.transform.GetChild(1).GetComponent<Text>().text = ShopItemList[i].prize.ToString();
-            buyButton = item.transform.GetChild(2).GetComponent<Button>();
-            selectButton = item.transform.GetChild(3).GetComponent<Button>();
+            item.transform.GetChild(1).GetComponent<Button>().transform.GetChild(0).GetComponent<Text>().text = ShopItemList[i].prize.ToString();
+            buyButton = item.transform.GetChild(1).GetComponent<Button>();
+            selectButton = item.transform.GetChild(2).GetComponent<Button>();
 
 
-            buyButton.interactable = PlayerPrefs.GetInt("skin" + i, 0) == 0;
+            buyButton.gameObject.SetActive(PlayerPrefs.GetInt("skin" + i, 0) == 0);
 
-            if (buyButton.interactable == true)
+            if (buyButton.gameObject.activeSelf == true)
             {
-                selectButton.interactable = false;
+                selectButton.gameObject.SetActive(false);
+            }
+            else
+            {
+                selectButton.gameObject.SetActive(true);
             }
             
             buyButton.AddEventListener(i, ShopItemButtonClicked);
@@ -73,10 +77,10 @@ public class ShopManager : MonoBehaviour
         if (HasEnoughMoney(ShopItemList[itemIndex].prize))
         {
             useCash(ShopItemList[itemIndex].prize);
-            buyButton = shopScrollView.GetChild(itemIndex).GetChild(2).GetComponent<Button>();
-            selectButton = shopScrollView.GetChild(itemIndex).GetChild(3).GetComponent<Button>();
-            buyButton.interactable = false;
-            selectButton.interactable = true;
+            buyButton = shopScrollView.GetChild(itemIndex).GetChild(1).GetComponent<Button>();
+            selectButton = shopScrollView.GetChild(itemIndex).GetChild(2).GetComponent<Button>();
+            buyButton.gameObject.SetActive(false);
+            selectButton.gameObject.SetActive(true);
             PlayerPrefs.SetInt("skin" + itemIndex, 1);
             ShopItemList[itemIndex].isPurchased = true;
             RefreshCoin();

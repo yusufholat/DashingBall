@@ -19,6 +19,8 @@ GameObject:
   - component: {fileID: 6150251860227512467}
   - component: {fileID: 3736949962097877051}
   - component: {fileID: 7954295049803785231}
+  - component: {fileID: 94960476559645574}
+  - component: {fileID: 183869869238781017}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -34,8 +36,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3690313438541755427}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -4, z: 0}
-  m_LocalScale: {x: 0.16, y: 0.16, z: 1}
+  m_LocalPosition: {x: 11.3, y: -11.09, z: 0}
+  m_LocalScale: {x: 0.15, y: 0.15, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -167,7 +169,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.3
+  m_Time: 0.25
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 0.8
@@ -230,7 +232,7 @@ TrailRenderer:
     textureMode: 0
     shadowBias: 0.5
     generateLightingData: 0
-  m_MinVertexDistance: 0.1
+  m_MinVertexDistance: 0
   m_Autodestruct: 0
   m_Emitting: 1
 --- !u!114 &3690313438541755435
@@ -314,4 +316,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blackHoleArea: {fileID: 30562899624269433, guid: 20a594b8c08f42445a7397b3cdfe35ac,
+    type: 3}
+--- !u!114 &94960476559645574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3690313438541755427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15b8a9e5ed8acf04e8340c2806931095, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeFreezeArea: {fileID: 2000078813742504074, guid: 759b9af437753144199691592b712d27,
+    type: 3}
+  timeFreeze: {fileID: 1975166180986265828, guid: bfdd5c054df3640409c5fbb8d3a862f7,
+    type: 3}
+--- !u!114 &183869869238781017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3690313438541755427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3ad2605970e61a4e9de322c350f07a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shieldArea: {fileID: 7672384402046425679, guid: ce6f7fdd246920842af6e2257023e495,
     type: 3}

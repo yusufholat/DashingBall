@@ -15,6 +15,9 @@ TagManager:
   - BlackHoleArea
   - TimeFreeze
   - EnemySecondHitbox
+  - TimeFreezeArea
+  - Shield
+  - ShieldArea
   layers:
   - Default
   - TransparentFX

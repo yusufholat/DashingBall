@@ -33,5 +33,13 @@ public class destroyEnemy : MonoBehaviour
 
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("ShieldArea"))
+        {
+            Instantiate(die, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
+    }
 
 }

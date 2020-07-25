@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6158419093902747305}
   - component: {fileID: 1672047851119750792}
-  - component: {fileID: 6158419093902747306}
   - component: {fileID: 1175640364296055780}
   m_Layer: 0
   m_Name: BlackHole
@@ -28,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 6158419093902747304}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.99, y: -0.34, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children:
   - {fileID: 6158419095521535915}
   m_Father: {fileID: 0}
@@ -50,25 +49,6 @@ CircleCollider2D:
   m_Offset: {x: 0.010254383, y: -0.04102111}
   serializedVersion: 2
   m_Radius: 1.453749
---- !u!95 &6158419093902747306
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6158419093902747304}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 82565cb2f4be7ef40ba0dda61c7a2f3b, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &1175640364296055780
 MonoBehaviour:
   m_ObjectHideFlags: 0

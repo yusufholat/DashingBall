@@ -20,8 +20,6 @@ public class Player : MonoBehaviour
     public ParticleSystem dashEffect;
     public ParticleSystem deadEffect;
 
-    public GameObject plus5Text;
-
     string[] dashs = { "dash1", "dash2", "dash3", "dash4" };
 
     private void Start()
@@ -39,7 +37,7 @@ public class Player : MonoBehaviour
     }
 
 
-    void LateUpdate()
+    void Update()
     {
         if (!GameManager.gameStarded)
         {
@@ -129,7 +127,6 @@ public class Player : MonoBehaviour
             if(GameManager.gameStarded)
                 PlayerManager.score++;
         }
-
     }
 
     private void OnCollisionStay2D(Collision2D collision)
@@ -161,6 +158,14 @@ public class Player : MonoBehaviour
         {
             takeBlackHole();
         }
+        if (collision.gameObject.CompareTag("TimeFreeze"))
+        {
+            takeTimeFreeze();
+        }
+        if (collision.gameObject.CompareTag("Shield"))
+        {
+            takeShield();
+        }
         
     }
 
@@ -168,7 +173,6 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("EnemySecondHitbox"))
         {
-            Instantiate(plus5Text, collision.transform.position, Quaternion.identity);
             PlayerManager.score += 5;
         }
     }
@@ -200,4 +204,13 @@ public class Player : MonoBehaviour
         PlayerManager.instance.takeBlackHole();
     }
 
+    private void takeTimeFreeze()
+    {
+        PlayerManager.instance.takeTimeFreeze();
+    }
+
+    private void takeShield()
+    {
+        PlayerManager.instance.takeShield();
+    }
 }

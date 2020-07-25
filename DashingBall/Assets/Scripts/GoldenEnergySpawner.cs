@@ -20,12 +20,12 @@ public class GoldenEnergySpawner : MonoBehaviour
     void Start()
     {
         mesh = GetComponent<MeshCollider>();
-        spawnTime = Random.Range(minSpawnRate, maxSpawnRate);
+        spawnTime = Random.Range(minSpawnRate, maxSpawnRate );
     }
 
     void Update()
     {
-        if (GameManager.gameStarded == true)
+        if (GameManager.gameStarded == true && GameManager.gameDifficulty >= 2)
             spawnGoldenEnergy();
     }
 
