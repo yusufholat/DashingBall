@@ -16,6 +16,15 @@ public class PlayerManager : MonoBehaviour
     public static float currentHealth;
     public static int score;
 
+    public static int countEnergy = 0;
+    public static int countAntiEnergy = 0;
+    public static int countGoldenEnergy = 0;
+    public static int countBlackHole = 0;
+    public static int countTimeFreeze = 0;
+    public static int countShield = 0;
+    public static int countDestroyEnemy = 0;
+    public static int countPerfect = 0;
+
 
     public static bool goldenEnergyPower = false;
     public static bool timeFreezePower = false;
@@ -45,7 +54,7 @@ public class PlayerManager : MonoBehaviour
 
     public void RefreshSkin()
     {
-        instantiatedPlayer.GetComponent<SpriteRenderer>().sprite = SkinManager.instance.ShopItemList[PlayerPrefs.GetInt("CurrentSkin", 0)].image;
+        instantiatedPlayer.GetComponent<SpriteRenderer>().sprite = ShopSkinManager.instance.ShopSkinList[PlayerPrefs.GetInt("CurrentSkin", 0)].image;
     }
 
 
@@ -55,6 +64,7 @@ public class PlayerManager : MonoBehaviour
         goldenEnergyPower = true;
         TakenSkillManager.instance.ShowSkill("GoldenEnergy");
         StartCoroutine(resetGoldenEnergy());
+        countGoldenEnergy++;
     }
 
     IEnumerator resetGoldenEnergy()
@@ -68,6 +78,7 @@ public class PlayerManager : MonoBehaviour
     public void takeBlackHole()
     {
         TakenSkillManager.instance.ShowSkill("BlackHole");
+        countBlackHole++;
     }
 
 
@@ -77,6 +88,7 @@ public class PlayerManager : MonoBehaviour
         timeFreezePower = true;
         TakenSkillManager.instance.ShowSkill("TimeFreeze");
         StartCoroutine(resetTimeFreeze());
+        countTimeFreeze++;
     }
 
     IEnumerator resetTimeFreeze()
@@ -87,8 +99,22 @@ public class PlayerManager : MonoBehaviour
     }
 
 
+
     public void takeShield()
     {
         TakenSkillManager.instance.ShowSkill("Shield");
+        countShield++;
+    }
+
+    public void resetCounter()
+    {
+        countEnergy = 0;
+        countAntiEnergy = 0;
+        countGoldenEnergy = 0;
+        countBlackHole = 0;
+        countTimeFreeze = 0;
+        countShield = 0;
+        countDestroyEnemy = 0;
+        countPerfect = 0;
     }
 }

@@ -10,6 +10,7 @@ public class TakeAntiHealth : MonoBehaviour
         {
             Destroy(collision.gameObject);
             EffectManager.PlayAnim("TakeAntiEnergy");
+            PlayerManager.countAntiEnergy++;
         }
     }
 }

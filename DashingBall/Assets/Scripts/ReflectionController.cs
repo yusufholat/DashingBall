@@ -83,4 +83,22 @@ public class ReflectionController : MonoBehaviour
             GameManager.gameOver = true;
         }
     }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("ShopOutsideArea"))
+        {
+            movePos = new Vector3(0, 3, 0) - transform.position;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("ShopOutsideArea"))
+        {
+            Debug.Log("cikti");
+            collision.gameObject.GetComponent<BoxCollider2D>().isTrigger = false;
+            collision.gameObject.tag = "Hitbox";
+        }
+    }
 }

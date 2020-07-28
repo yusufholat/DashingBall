@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 183869869238781017}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -264,8 +264,6 @@ MonoBehaviour:
   dashEffect: {fileID: 6791991852996383515, guid: 5e5e512bc79b39747a2f786d8688852f,
     type: 3}
   deadEffect: {fileID: 2705436243262502308, guid: 28d3ad3bab5ac6b4f9ce23b7343ef079,
-    type: 3}
-  plus5Text: {fileID: 1662375446543182581, guid: 223314b005ef6a9479f77580516f48dc,
     type: 3}
 --- !u!114 &3690313438541755434
 MonoBehaviour:

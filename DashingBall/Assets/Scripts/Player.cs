@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        GetComponent<SpriteRenderer>().sprite = SkinManager.instance.ShopItemList[PlayerPrefs.GetInt("CurrentSkin", 0)].image;
+        GetComponent<SpriteRenderer>().sprite = ShopSkinManager.instance.ShopSkinList[PlayerPrefs.GetInt("CurrentSkin", 0)].image;
         PlayerManager.score = 0;
         PlayerManager.maxHealth = 100;
         PlayerManager.currentHealth = 100;
@@ -185,6 +185,7 @@ public class Player : MonoBehaviour
         currentHealth += energy;
         if (currentHealth > maxHealth)
             currentHealth = maxHealth;
+        PlayerManager.countEnergy++;
     }
 
     private void takeAntiHealth()
@@ -192,6 +193,8 @@ public class Player : MonoBehaviour
         currentHealth -= energy;
         if (currentHealth < 0)
             currentHealth = 0;
+
+        PlayerManager.countAntiEnergy++;
     }
 
     private void takeGoldenEnergy()

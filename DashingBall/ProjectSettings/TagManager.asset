@@ -18,6 +18,7 @@ TagManager:
   - TimeFreezeArea
   - Shield
   - ShieldArea
+  - ShopOutsideArea
   layers:
   - Default
   - TransparentFX

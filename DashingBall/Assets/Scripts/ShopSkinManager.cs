@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SkinManager : MonoBehaviour
+public class ShopSkinManager : MonoBehaviour
 {
 
-    public static SkinManager instance;
+    public static ShopSkinManager instance;
     private void Awake()
     {
         if (instance == null)
@@ -15,6 +15,6 @@ public class SkinManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public List<ShopItem> ShopItemList;
+    public List<ShopSkin> ShopSkinList;
 
 }

@@ -43,28 +43,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6340fd83ae7182d478d366d617a87c2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShopItemList:
-  - image: {fileID: 21300000, guid: 2bb655cab81d1d54c9d860034a68a20b, type: 3}
+  ShopSkinList:
+  - image: {fileID: 21300000, guid: 812ebaa1b6b43e140b1ead1660a64d03, type: 3}
     prize: 0
-    isPurchased: 1
+    costType: gold
   - image: {fileID: 21300000, guid: 6141662e506bf7c4aafdc801110bf713, type: 3}
     prize: 200
-    isPurchased: 0
+    costType: gold
   - image: {fileID: 21300000, guid: 21f81b44f5c13554588be7903349f541, type: 3}
     prize: 200
-    isPurchased: 0
+    costType: gold
   - image: {fileID: 21300000, guid: b55d48c3a1e831f43816e38f6f7d24e1, type: 3}
     prize: 300
-    isPurchased: 0
+    costType: gold
   - image: {fileID: 21300000, guid: 603b1c00cdf24a04b8172e61360e3e87, type: 3}
     prize: 300
-    isPurchased: 0
-  - image: {fileID: 21300000, guid: 775bbec814dd83a4b85955f63327d389, type: 3}
+    costType: gold
+  - image: {fileID: 21300000, guid: 5960b1caab8074a498e39c90127426bf, type: 3}
     prize: 500
-    isPurchased: 0
-  - image: {fileID: 21300000, guid: 0142d6e78f585724d8475883d5baa824, type: 3}
+    costType: gold
+  - image: {fileID: 21300000, guid: 84c5c2f70829e7c49a7cd530666e2710, type: 3}
     prize: 500
-    isPurchased: 0
+    costType: gold
   - image: {fileID: 21300000, guid: 89103185d955247429ab54f520ad45af, type: 3}
     prize: 500
-    isPurchased: 0
+    costType: gold
+  - image: {fileID: 21300000, guid: 8bfab993675781640846e36281bee43c, type: 3}
+    prize: 750
+    costType: gold
+  - image: {fileID: 21300000, guid: 7a374859db5870f4992fd5c6efe8e840, type: 3}
+    prize: 750
+    costType: gold
+  - image: {fileID: 21300000, guid: 7453f3338218d0d4486a19fc4257f87f, type: 3}
+    prize: 750
+    costType: gold
+  - image: {fileID: 21300000, guid: 01712ad93277e7f48aeb3872579a26c1, type: 3}
+    prize: 250
+    costType: energy
+  - image: {fileID: 21300000, guid: 50281abf41a06094b90733c153f81c00, type: 3}
+    prize: 100
+    costType: antienergy
+  - image: {fileID: 21300000, guid: 6554c0cb4e1f68245afae1d8a3850016, type: 3}
+    prize: 200
+    costType: goldenenergy
+  - image: {fileID: 21300000, guid: 3cb97a70a92c5674ab1fd2810cc4394f, type: 3}
+    prize: 200
+    costType: blackhole
+  - image: {fileID: 21300000, guid: c64c01f307f534b4caf1319997610f48, type: 3}
+    prize: 100
+    costType: timefreeze
+  - image: {fileID: 21300000, guid: 3aa47b5c84bc57b4b81b32242ce81e31, type: 3}
+    prize: 100
+    costType: shield

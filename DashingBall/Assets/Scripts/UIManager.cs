@@ -15,6 +15,13 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI gameOverHighScoreText;
     public TextMeshProUGUI gameOverScoreText;
 
+    public TextMeshProUGUI countEnergyText;
+    public TextMeshProUGUI countAntiEnergyText;
+    public TextMeshProUGUI countGoldenEnergyText;
+    public TextMeshProUGUI countBlackHoleText;
+    public TextMeshProUGUI countTimeFreezeText;
+    public TextMeshProUGUI countShieldText;
+
     Animator transition;
 
     //public void Resume()
@@ -57,6 +64,20 @@ public class UIManager : MonoBehaviour
 
             gameOverHighScoreText.text = PlayerPrefs.GetInt("HighScore", 0).ToString();
             gameOverScoreText.text = PlayerManager.score.ToString();
+
+            countEnergyText.text = "x" + PlayerManager.countEnergy.ToString();
+            countAntiEnergyText.text = "x" + PlayerManager.countAntiEnergy.ToString();
+            countGoldenEnergyText.text = "x" + PlayerManager.countGoldenEnergy.ToString();
+            countBlackHoleText.text = "x" + PlayerManager.countBlackHole.ToString();
+            countTimeFreezeText.text = "x" + PlayerManager.countTimeFreeze.ToString();
+            countShieldText.text = "x" + PlayerManager.countShield.ToString();
+
+            PlayerPrefs.SetInt("energy", PlayerManager.countEnergy + PlayerPrefs.GetInt("energy", 0));
+            PlayerPrefs.SetInt("antienergy", PlayerManager.countAntiEnergy + PlayerPrefs.GetInt("antienergy", 0));
+            PlayerPrefs.SetInt("goldenenergy", PlayerManager.countGoldenEnergy + PlayerPrefs.GetInt("goldenenergy", 0));
+            PlayerPrefs.SetInt("blackhole", PlayerManager.countBlackHole + PlayerPrefs.GetInt("blackhole", 0));
+            PlayerPrefs.SetInt("timefreeze", PlayerManager.countTimeFreeze + PlayerPrefs.GetInt("timefreeze",0));
+            PlayerPrefs.SetInt("shield", PlayerManager.countShield + PlayerPrefs.GetInt("shield", 0));
 
             scoreTextUI.SetActive(false);
             gameOverMenu.SetActive(true);

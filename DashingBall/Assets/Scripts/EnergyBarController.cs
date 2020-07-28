@@ -22,8 +22,8 @@ public class EnergyBarController : MonoBehaviour
     {
         energyBar.SetHealth(PlayerManager.currentHealth);
 
-        if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject() ||
-            Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began && !EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId))
+        if (Input.GetMouseButtonDown(0) && !GameManager.IsPointerOverUIObject() ||
+            Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began && !GameManager.IsPointerOverUIObject())
         {
             energyBarAnim.Play("dashanimation");
         }

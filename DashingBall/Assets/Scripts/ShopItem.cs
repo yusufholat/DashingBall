@@ -1,13 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
-
 
 [System.Serializable]
 public class ShopItem
 {
+    public string name;
     public Sprite image;
-    public Gradient grad;
-    public int prize;
-    public bool isPurchased = false;
+    public int count;
 }

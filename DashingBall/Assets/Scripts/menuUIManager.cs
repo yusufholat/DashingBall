@@ -23,6 +23,9 @@ public class menuUIManager : MonoBehaviour
     public Sprite VibrationOnSprite;
     public Sprite VibrationOffSprite;
 
+    public GameObject shopTopPanel;
+    public GameObject shopBottomPanel;
+
     bool settingsMenuIsOpen = false;
     public static bool shopIsOpen = false;
 
@@ -113,6 +116,11 @@ public class menuUIManager : MonoBehaviour
 
     public void closeShop()
     {
+        shopTopPanel.gameObject.tag = "ShopOutsideArea";
+        shopTopPanel.GetComponent<BoxCollider2D>().isTrigger = true;
+        shopBottomPanel.gameObject.tag = "ShopOutsideArea";
+        shopBottomPanel.GetComponent<BoxCollider2D>().isTrigger = true;
+
         transition.SetTrigger("closeshop");
         shopIsOpen = false;
     }

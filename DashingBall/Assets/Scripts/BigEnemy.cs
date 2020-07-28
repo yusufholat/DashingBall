@@ -6,8 +6,8 @@ public class BigEnemy : MonoBehaviour
 {
     private Rigidbody2D rb;
     public float speed;
-    
     private float startedSpeed = 0;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
