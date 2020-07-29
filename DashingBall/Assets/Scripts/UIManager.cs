@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class UIManager : MonoBehaviour
 {
     public GameObject energyBarUI;
-    public GameObject pauseMenuUI; 
+    public GameObject pauseMenuUI;
     public GameObject pauseButtonUI;
     public GameObject scoreTextUI;
     public GameObject gameOverMenu;
@@ -23,20 +23,6 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI countShieldText;
 
     Animator transition;
-
-    //public void Resume()
-    //{
-    //    Time.timeScale = 1f;
-    //    pauseMenuUI.SetActive(false);
-    //    pauseButtonUI.SetActive(true);
-
-    //}
-
-    //public void Pause()
-    //{
-    //    Time.timeScale = 0f;
-    //    pauseMenuUI.SetActive(true);
-    //}
 
     private void Start()
     {
@@ -60,6 +46,7 @@ public class UIManager : MonoBehaviour
     {
         if(GameManager.gameOver == true)
         {
+
             GameManager.instance.GameOver();
 
             gameOverHighScoreText.text = PlayerPrefs.GetInt("HighScore", 0).ToString();
@@ -72,13 +59,7 @@ public class UIManager : MonoBehaviour
             countTimeFreezeText.text = "x" + PlayerManager.countTimeFreeze.ToString();
             countShieldText.text = "x" + PlayerManager.countShield.ToString();
 
-            PlayerPrefs.SetInt("energy", PlayerManager.countEnergy + PlayerPrefs.GetInt("energy", 0));
-            PlayerPrefs.SetInt("antienergy", PlayerManager.countAntiEnergy + PlayerPrefs.GetInt("antienergy", 0));
-            PlayerPrefs.SetInt("goldenenergy", PlayerManager.countGoldenEnergy + PlayerPrefs.GetInt("goldenenergy", 0));
-            PlayerPrefs.SetInt("blackhole", PlayerManager.countBlackHole + PlayerPrefs.GetInt("blackhole", 0));
-            PlayerPrefs.SetInt("timefreeze", PlayerManager.countTimeFreeze + PlayerPrefs.GetInt("timefreeze",0));
-            PlayerPrefs.SetInt("shield", PlayerManager.countShield + PlayerPrefs.GetInt("shield", 0));
-
+            GameManager.instance.ResetItemCounts();
             scoreTextUI.SetActive(false);
             gameOverMenu.SetActive(true);
         }

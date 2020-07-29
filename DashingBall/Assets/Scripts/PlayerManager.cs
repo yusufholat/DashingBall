@@ -94,7 +94,6 @@ public class PlayerManager : MonoBehaviour
     IEnumerator resetTimeFreeze()
     {
         yield return new WaitForSeconds(SkillManager.instance.getCooldown("TimeFreeze"));
-        EffectManager.PlayAnim("DefaultEffect");
         timeFreezePower = false;
     }
 

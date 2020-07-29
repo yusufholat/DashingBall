@@ -46,25 +46,41 @@ MonoBehaviour:
   sounds:
   - name: MenuMusic
     clip: {fileID: 8300000, guid: 12016ff809f8c834e849e04a66fccc7b, type: 3}
-    volume: 0.5
+    volume: 0.7
+    playOnAwake: 0
     source: {fileID: 0}
   - name: PlayerBounce
     clip: {fileID: 8300000, guid: ba3d3f16cc76f98479bb08b38e1fa775, type: 3}
     volume: 0.5
+    playOnAwake: 0
     source: {fileID: 0}
   - name: dash1
     clip: {fileID: 8300000, guid: f5b7d38e71a97d044aeb9d4337eb5175, type: 3}
     volume: 0.5
+    playOnAwake: 0
     source: {fileID: 0}
   - name: dash2
     clip: {fileID: 8300000, guid: ec50696334cec4343b9b660a169eafc4, type: 3}
     volume: 0.5
+    playOnAwake: 0
     source: {fileID: 0}
   - name: dash3
     clip: {fileID: 8300000, guid: ce2512a0de1771e488acd4edc28273cd, type: 3}
     volume: 0.5
+    playOnAwake: 0
     source: {fileID: 0}
   - name: dash4
     clip: {fileID: 8300000, guid: b559b9be24780ac40b807ea382afa9cc, type: 3}
     volume: 0.5
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: LevelUp
+    clip: {fileID: 8300000, guid: 598538e86d541d347819f3fe5b8ff892, type: 3}
+    volume: 0.962
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: LevelUpEnd
+    clip: {fileID: 8300000, guid: a78b20e942f93b14e8c56408e67f2545, type: 3}
+    volume: 0.939
+    playOnAwake: 0
     source: {fileID: 0}

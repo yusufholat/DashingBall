@@ -14,10 +14,12 @@ public class GameManager : MonoBehaviour
     public static bool vibrationOn = true;
     public static bool MenuMusicPlaying;
 
-    float gameTime = 0;
+    int nextTime = 0, rate = 30;
+    bool endLevel = false;
     public static int gameDifficulty = 1;
 
-    public Gradient colors;
+    public Color[] collors;
+
     public Color menuColor;
 
     public static GameManager instance;
@@ -47,18 +49,23 @@ public class GameManager : MonoBehaviour
         }
         if (gameStarded)
         {
-            setGameDifficulty(gameTime);
-            gameTime += Time.deltaTime;
+            Debug.Log(Time.timeSinceLevelLoad);
+            if (Time.timeSinceLevelLoad > nextTime)
+            {
+                if (!endLevel)
+                {
+                    setGameDifficulty(Time.timeSinceLevelLoad);
+                    nextTime += rate;
+                }
+            }
+            
         }
-        else
-        {
-            gameTime = 0;
-        }
+        else nextTime = 0;
 
-        if(gameStarded)
-        Camera.main.backgroundColor = colors.Evaluate(Mathf.InverseLerp(0, 90, gameTime));
 
     }
+
+
     public static bool IsPointerOverUIObject()
     {
         PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current);
@@ -71,24 +78,31 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        Time.timeScale = 0.2f;
+        Time.timeScale = 0.25f;
         gameOver = false;
 
-        int newcoin = PlayerManager.score + PlayerPrefs.GetInt("TotalCoin", 3000);
         int highScore = PlayerPrefs.GetInt("HighScore", 0);
 
         if (PlayerManager.score > highScore)
             PlayerPrefs.SetInt("HighScore", PlayerManager.score);
 
-        PlayerManager.totalCoin = newcoin;
-        PlayerPrefs.SetInt("TotalCoin", newcoin);
+        PlayerManager.totalCoin = PlayerManager.score + PlayerPrefs.GetInt("TotalCoin", 3000);
+
+        PlayerPrefs.SetInt("TotalCoin", PlayerManager.score + PlayerPrefs.GetInt("TotalCoin", 3000));
+        PlayerPrefs.SetInt("energy", PlayerManager.countEnergy + PlayerPrefs.GetInt("energy", 0));
+        PlayerPrefs.SetInt("antienergy", PlayerManager.countAntiEnergy + PlayerPrefs.GetInt("antienergy", 0));
+        PlayerPrefs.SetInt("goldenenergy", PlayerManager.countGoldenEnergy + PlayerPrefs.GetInt("goldenenergy", 0));
+        PlayerPrefs.SetInt("blackhole", PlayerManager.countBlackHole + PlayerPrefs.GetInt("blackhole", 0));
+        PlayerPrefs.SetInt("timefreeze", PlayerManager.countTimeFreeze + PlayerPrefs.GetInt("timefreeze", 0));
+        PlayerPrefs.SetInt("shield", PlayerManager.countShield + PlayerPrefs.GetInt("shield", 0));
+
     }
 
     public void restartGame()
     {
         Time.timeScale = 1f;
         gameOver = false;
-        gameTime = 0;
+        nextTime = 0;
         SceneManager.LoadScene("Game");
         Camera.main.backgroundColor = menuColor;
     }
@@ -105,33 +119,54 @@ public class GameManager : MonoBehaviour
 
 
 
-
     public void setGameDifficulty(float gameTime)
     {
-        if (gameTime > 90)
+        if (gameTime > 120)
         {
-            EnemySpawner.spawnRate = 0.5f;
+            AudioManager.instance.Play("LevelUpEnd");
+            EnemySpawner.spawnRate = 0.7f;
             gameDifficulty = 5;
+            Camera.main.backgroundColor = collors[4];
+            endLevel = true;
         }
-        else if(gameTime > 60)
+        else if (gameTime > 90)
         {
+            AudioManager.instance.Play("LevelUp");
             EnemySpawner.spawnRate = 1f;
             gameDifficulty = 4;
+            Camera.main.backgroundColor = collors[3];
+        }
+        else if (gameTime > 60)
+        {
+            AudioManager.instance.Play("LevelUp");
+            EnemySpawner.spawnRate = 1.5f;
+            gameDifficulty = 3;
+            Camera.main.backgroundColor = collors[2];
         }
         else if (gameTime > 30)
         {
-            EnemySpawner.spawnRate = 1.5f;
-            gameDifficulty = 3;
-        }
-        else if (gameTime > 15)
-        {
             EnemySpawner.spawnRate = 2f;
             gameDifficulty = 2;
+            Camera.main.backgroundColor = collors[1];
+            AudioManager.instance.Play("LevelUp");
         }
-        else if(gameTime == 0){
+        else if (gameTime > 0){
             EnemySpawner.spawnRate = 2.5f;
             gameDifficulty = 1;
+            Camera.main.backgroundColor = collors[0];
+            endLevel = false;
         }
+    }
+
+    public void ResetItemCounts()
+    {
+        PlayerManager.score = 0;
+        PlayerManager.countEnergy = 0;
+        PlayerManager.countAntiEnergy = 0;
+        PlayerManager.countGoldenEnergy = 0;
+        PlayerManager.countBlackHole = 0;
+        PlayerManager.countTimeFreeze = 0;
+        PlayerManager.countShield = 0;
     }
 
 }

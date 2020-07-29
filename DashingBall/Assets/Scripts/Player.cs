@@ -137,6 +137,7 @@ public class Player : MonoBehaviour
 
             if(GameManager.gameStarded)
             FindObjectOfType<AudioManager>().Play("PlayerBounce");
+
         }
     }
 

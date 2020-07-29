@@ -43,13 +43,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcd90756754804c4a99d5e0f62a27c17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalCoin: 0
-  currentSkinIndex: 2
   playerTemplate: {fileID: 3690313438541755427, guid: a55e115e5c83ce64ca44b6468428e8e2,
     type: 3}
-  playerSpeed: 1.5
-  maxHealth: 100
-  currentHealth: 100
-  incrementHealth: 0.15
-  dashSpend: 20
-  energy: 40
