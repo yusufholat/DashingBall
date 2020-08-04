@@ -8,11 +8,12 @@ public class SkillTemplate : MonoBehaviour
 {
     float cooldown;
     Animator anim;
-
+    
     void Start()
     {
         anim = GetComponent<Animator>();
         cooldown = transform.GetChild(1).GetComponent<Slider>().maxValue;
+        Debug.Log(cooldown);
     }
 
     void Update()
@@ -26,7 +27,6 @@ public class SkillTemplate : MonoBehaviour
             anim.SetTrigger("end");
             Destroy(gameObject, 1f);
         }
-
         cooldown -= Time.deltaTime;
     }
 }

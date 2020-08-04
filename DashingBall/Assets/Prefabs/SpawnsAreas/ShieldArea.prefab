@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7672384402046425676}
   - component: {fileID: 7672384402046425675}
   - component: {fileID: 7672384402046425674}
-  - component: {fileID: -6361169122502217195}
+  - component: {fileID: 1449656772}
   m_Layer: 0
   m_Name: ShieldArea
   m_TagString: ShieldArea
@@ -27,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7672384402046425679}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children: []
@@ -49,6 +49,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -119,7 +120,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &-6361169122502217195
+--- !u!114 &1449656772
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -128,7 +129,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 7672384402046425679}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c003c2a810d8aa43bec5b084f97942e, type: 3}
+  m_Script: {fileID: 11500000, guid: 2a0987d8db2da49d49b21f3b55fd02a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeTime: 6

@@ -57,6 +57,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -89,7 +90,7 @@ SpriteRenderer:
   m_Size: {x: 5.12, y: 5.12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!58 &3690313438541755432
@@ -145,6 +146,7 @@ TrailRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -327,7 +329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15b8a9e5ed8acf04e8340c2806931095, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeFreezeArea: {fileID: 2000078813742504074, guid: 759b9af437753144199691592b712d27,
+  timeFreezeArea: {fileID: 4466816145287429144, guid: a64fe3fae79a144b48bf1109a45d14f5,
     type: 3}
   timeFreeze: {fileID: 1975166180986265828, guid: bfdd5c054df3640409c5fbb8d3a862f7,
     type: 3}

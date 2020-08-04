@@ -84,3 +84,8 @@ MonoBehaviour:
     volume: 0.939
     playOnAwake: 0
     source: {fileID: 0}
+  - name: GameOver
+    clip: {fileID: 8300000, guid: cb4fee905283e45918e693acc4c42171, type: 3}
+    volume: 0.939
+    playOnAwake: 0
+    source: {fileID: 0}

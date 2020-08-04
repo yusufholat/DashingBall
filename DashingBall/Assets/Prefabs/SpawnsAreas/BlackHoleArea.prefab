@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 30562899624269432}
   - component: {fileID: 30562899624269434}
   - component: {fileID: 30562899624269435}
-  - component: {fileID: 4993150499489143605}
+  - component: {fileID: 2102522954}
   m_Layer: 0
   m_Name: BlackHoleArea
   m_TagString: BlackHoleArea
@@ -69,7 +69,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &4993150499489143605
+--- !u!114 &2102522954
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -78,10 +78,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 30562899624269433}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c003c2a810d8aa43bec5b084f97942e, type: 3}
+  m_Script: {fileID: 11500000, guid: 6261e44b630f7465a9da2fc3e5ac9d3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeTime: 7
 --- !u!1 &30562901243484027
 GameObject:
   m_ObjectHideFlags: 0
@@ -128,6 +127,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
