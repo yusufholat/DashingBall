@@ -11,6 +11,14 @@ public class ItemManager : MonoBehaviour
 
     private void Awake()
     {
+
+        //PlayerPrefs.SetInt("energy", 500);
+        //PlayerPrefs.SetInt("antienergy", 500);
+        //PlayerPrefs.SetInt("goldenenergy", 500);
+        //PlayerPrefs.SetInt("blackhole", 500);
+        //PlayerPrefs.SetInt("timefreeze", 500);
+        //PlayerPrefs.SetInt("shield", 500);
+
         RefreshList();
 
         if (instance == null)
@@ -54,42 +62,14 @@ public class ItemManager : MonoBehaviour
 
     public void RefreshList()
     {
-        RefreshCounts();
-        RefreshLevels();
-        RefreshCosts();
-        RefreshCoolDowns();
-    }
-
-    void RefreshCounts()
-    {
         for (int i = 0; i < ItemList.Count; i++)
         {
             ItemList[i].RefreshCount();
-        }
-    }
-
-    void RefreshLevels()
-    {
-        for (int i = 0; i < ItemList.Count; i++)
-        {
             ItemList[i].RefreshLevel();
-        }
-    }
-
-    void RefreshCosts()
-    {
-        for (int i = 0; i < ItemList.Count; i++)
-        {
             ItemList[i].setLevelToCost();
-        }
-    }
-
-    void RefreshCoolDowns()
-    {
-        for (int i = 0; i < ItemList.Count; i++)
-        {
             ItemList[i].setLevelToCooldown();
         }
+
     }
 
 }

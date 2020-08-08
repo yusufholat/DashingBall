@@ -160,7 +160,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.5449219, y: -72.2988}
+  m_AnchoredPosition: {x: -0.546875, y: -72.296875}
   m_SizeDelta: {x: -90.83899, y: -225.65936}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &45262455
@@ -281,7 +281,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 274.79004, y: -92.9043}
+  m_AnchoredPosition: {x: 274.78906, y: -92.90625}
   m_SizeDelta: {x: 459.83286, y: 123.80701}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &50913668
@@ -356,7 +356,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -409129.84, y: 0}
+  m_AnchoredPosition: {x: -544180.4, y: 0}
   m_SizeDelta: {x: 0, y: -0.6581421}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &51614136
@@ -491,7 +491,7 @@ MonoBehaviour:
   shopItemTemplate: {fileID: 1555808074535980900, guid: cbc30056c096e2e4db7be2a5f804415e,
     type: 3}
   shopItemScrollView: {fileID: 2134044449}
-  upgradeItemTemplate: {fileID: 2268348622251645448, guid: edc43ea6765944b86a4c848115131962,
+  upgradeItemTemplate: {fileID: 8061194377798266797, guid: 79707a3a7516c434f802af3756b11886,
     type: 3}
   upgradeItemScrollView: {fileID: 130459619}
   profileStatTemplate: {fileID: 948436557850198561, guid: 439a49046baf4449d86667efc0670a24,
@@ -531,7 +531,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.00026607513, y: 153118.67}
+  m_AnchoredPosition: {x: -0.00026607513, y: 353348.78}
   m_SizeDelta: {x: 0.00024414062, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &130459620
@@ -568,7 +568,7 @@ MonoBehaviour:
   m_ChildAlignment: 1
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 700, y: 150}
+  m_CellSize: {x: 700, y: 130}
   m_Spacing: {x: 30, y: 30}
   m_Constraint: 1
   m_ConstraintCount: 1
@@ -1083,7 +1083,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -202.2998, y: 0}
+  m_AnchoredPosition: {x: -202.30078, y: 0}
   m_SizeDelta: {x: 314.6925, y: 126.754395}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &303470228
@@ -1134,10 +1134,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_outlineColor:
-    serializedVersion: 2
-    rgba: 4278190080
-  m_fontSize: 74.65
+  m_fontSize: 80.25
   m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1147,7 +1144,6 @@ MonoBehaviour:
   m_HorizontalAlignment: 4
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_isAlignmentEnumConverted: 0
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -1157,10 +1153,8 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
-  m_isTextTruncated: 0
   m_enableKerning: 1
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
@@ -1168,30 +1162,17 @@ MonoBehaviour:
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
-  m_ignoreCulling: 1
   m_horizontalMapping: 0
   m_verticalMapping: 0
   m_uvLineOffset: 0
   m_geometrySortingOrder: 0
   m_IsTextObjectScaleStatic: 0
   m_VertexBufferAutoSizeReduction: 1
-  m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
   m_margin: {x: 0, y: 0, z: 0, w: 0}
-  m_textInfo:
-    textComponent: {fileID: 303470228}
-    characterCount: 7
-    spriteCount: 0
-    spaceCount: 0
-    wordCount: 1
-    linkCount: 0
-    lineCount: 1
-    pageCount: 1
-    materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_spriteAnimator: {fileID: 0}
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
@@ -1579,7 +1560,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -44.26758, y: 0.50077057}
+  m_AnchoredPosition: {x: -44.26953, y: 0.50077057}
   m_SizeDelta: {x: -88.53569, y: 0.29205322}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &545172357
@@ -1630,9 +1611,6 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_outlineColor:
-    serializedVersion: 2
-    rgba: 4278190080
   m_fontSize: 76.3
   m_fontSizeBase: 60
   m_fontWeight: 400
@@ -1643,7 +1621,6 @@ MonoBehaviour:
   m_HorizontalAlignment: 4
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_isAlignmentEnumConverted: 0
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -1653,10 +1630,8 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
-  m_isTextTruncated: 0
   m_enableKerning: 1
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
@@ -1664,30 +1639,17 @@ MonoBehaviour:
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
-  m_ignoreCulling: 1
   m_horizontalMapping: 0
   m_verticalMapping: 0
   m_uvLineOffset: 0
   m_geometrySortingOrder: 0
   m_IsTextObjectScaleStatic: 0
   m_VertexBufferAutoSizeReduction: 1
-  m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
   m_margin: {x: 0, y: 0, z: 0, w: 0}
-  m_textInfo:
-    textComponent: {fileID: 545172357}
-    characterCount: 5
-    spriteCount: 0
-    spaceCount: 0
-    wordCount: 1
-    linkCount: 0
-    lineCount: 1
-    pageCount: 1
-    materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_spriteAnimator: {fileID: 0}
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
@@ -1894,6 +1856,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 81550151}
+        m_TargetAssemblyTypeName: UpgradeManager, Assembly-CSharp
+        m_MethodName: ListItemsAgain
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &590953781
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2068,7 +2042,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -405.4004}
+  m_AnchoredPosition: {x: 0, y: -405.39648}
   m_SizeDelta: {x: -80, y: -890.85364}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &647138146
@@ -2181,7 +2155,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 248.2002, y: -97.29883}
+  m_AnchoredPosition: {x: 248.19922, y: -97.296875}
   m_SizeDelta: {x: -588.3228, y: 81.52023}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &696218224
@@ -2351,7 +2325,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -298.99994, y: 745.4388}
+  m_AnchoredPosition: {x: -298.99994, y: 745.4375}
   m_SizeDelta: {x: 230.7168, y: 380.24896}
   m_Pivot: {x: 0.5, y: -0.27044362}
 --- !u!95 &702237392
@@ -2525,7 +2499,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.6000061, y: -44.09961}
+  m_AnchoredPosition: {x: -0.6000061, y: -44.101562}
   m_SizeDelta: {x: -83.96045, y: -169.15302}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &741133368
@@ -3060,6 +3034,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 637153739}
+        m_TargetAssemblyTypeName: ShopManager, Assembly-CSharp
+        m_MethodName: ListItemsAgain
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &878738897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3080,7 +3066,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 812ebaa1b6b43e140b1ead1660a64d03, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8779023c8d3df4b80966431c22c2ed5d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3195,7 +3181,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.5498047, y: -92.83099}
+  m_AnchoredPosition: {x: -0.55078125, y: -92.828125}
   m_SizeDelta: {x: -90.83801, y: 123.660645}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1018439365
@@ -3819,9 +3805,6 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_outlineColor:
-    serializedVersion: 2
-    rgba: 4278190080
   m_fontSize: 79.6
   m_fontSizeBase: 36
   m_fontWeight: 400
@@ -3832,7 +3815,6 @@ MonoBehaviour:
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_isAlignmentEnumConverted: 1
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -3842,10 +3824,8 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
-  m_isTextTruncated: 0
   m_enableKerning: 1
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
@@ -3853,30 +3833,17 @@ MonoBehaviour:
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
-  m_ignoreCulling: 1
   m_horizontalMapping: 0
   m_verticalMapping: 0
   m_uvLineOffset: 0
   m_geometrySortingOrder: 0
   m_IsTextObjectScaleStatic: 0
   m_VertexBufferAutoSizeReduction: 1
-  m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
   m_margin: {x: 0, y: 0, z: 0, w: 0}
-  m_textInfo:
-    textComponent: {fileID: 1131774777}
-    characterCount: 5
-    spriteCount: 0
-    spaceCount: 0
-    wordCount: 1
-    linkCount: 0
-    lineCount: 1
-    pageCount: 1
-    materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_spriteAnimator: {fileID: 0}
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
@@ -4146,7 +4113,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -40.58008, y: 0.17739}
+  m_AnchoredPosition: {x: -40.58203, y: 0.17739}
   m_SizeDelta: {x: 81.16553, y: 81.16553}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1379695507
@@ -4443,9 +4410,6 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_outlineColor:
-    serializedVersion: 2
-    rgba: 4278190080
   m_fontSize: 118.25
   m_fontSizeBase: 60
   m_fontWeight: 400
@@ -4456,7 +4420,6 @@ MonoBehaviour:
   m_HorizontalAlignment: 4
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_isAlignmentEnumConverted: 0
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -4466,10 +4429,8 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
-  m_isTextTruncated: 0
   m_enableKerning: 1
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
@@ -4477,30 +4438,17 @@ MonoBehaviour:
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
-  m_ignoreCulling: 1
   m_horizontalMapping: 0
   m_verticalMapping: 0
   m_uvLineOffset: 0
   m_geometrySortingOrder: 0
   m_IsTextObjectScaleStatic: 0
   m_VertexBufferAutoSizeReduction: 1
-  m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
   m_margin: {x: 0, y: 0, z: 0, w: 0}
-  m_textInfo:
-    textComponent: {fileID: 1643070051}
-    characterCount: 4
-    spriteCount: 0
-    spaceCount: 0
-    wordCount: 1
-    linkCount: 0
-    lineCount: 1
-    pageCount: 1
-    materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_spriteAnimator: {fileID: 0}
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
@@ -4546,7 +4494,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.00026607513, y: 132791.88}
+  m_AnchoredPosition: {x: -0.00026607513, y: 304896.72}
   m_SizeDelta: {x: 0.00024414062, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1659360373
@@ -4856,7 +4804,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 262.2998, y: 370.5996}
+  m_AnchoredPosition: {x: 262.30078, y: 370.60156}
   m_SizeDelta: {x: 444.6081, y: -1204.3838}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1737818764
@@ -4944,8 +4892,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1743731203}
-  - component: {fileID: 1743731204}
   - component: {fileID: 1743731205}
+  - component: {fileID: 1743731204}
   m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
@@ -4969,7 +4917,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.00026607513, y: 284162.94}
+  m_AnchoredPosition: {x: -0.00026607513, y: 437349.34}
   m_SizeDelta: {x: 0.00024414062, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1743731204
@@ -5097,9 +5045,6 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_outlineColor:
-    serializedVersion: 2
-    rgba: 4278190080
   m_fontSize: 180.5
   m_fontSizeBase: 36
   m_fontWeight: 400
@@ -5110,7 +5055,6 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_isAlignmentEnumConverted: 0
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -5120,10 +5064,8 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
-  m_isTextTruncated: 0
   m_enableKerning: 1
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
@@ -5131,30 +5073,17 @@ MonoBehaviour:
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
-  m_ignoreCulling: 1
   m_horizontalMapping: 0
   m_verticalMapping: 0
   m_uvLineOffset: 0
   m_geometrySortingOrder: 0
   m_IsTextObjectScaleStatic: 0
   m_VertexBufferAutoSizeReduction: 1
-  m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
   m_margin: {x: 0, y: 0, z: 0, w: 0}
-  m_textInfo:
-    textComponent: {fileID: 1768434183}
-    characterCount: 12
-    spriteCount: 0
-    spaceCount: 1
-    wordCount: 2
-    linkCount: 0
-    lineCount: 2
-    pageCount: 1
-    materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_spriteAnimator: {fileID: 0}
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
@@ -5320,7 +5249,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.5449219, y: -72.29883}
+  m_AnchoredPosition: {x: -0.546875, y: -72.296875}
   m_SizeDelta: {x: -90.83899, y: -225.65936}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1849876033
@@ -5780,7 +5709,7 @@ GameObject:
   - component: {fileID: 2027757510}
   - component: {fileID: 2027757511}
   m_Layer: 5
-  m_Name: QuestionButton
+  m_Name: TutorialButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5847,7 +5776,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2027757508}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 219979102}
+        m_TargetAssemblyTypeName: menuUIManager, Assembly-CSharp
+        m_MethodName: OpenTutorial
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2027757508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6039,7 +5980,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -469.30005}
+  m_AnchoredPosition: {x: 0, y: -469.30273}
   m_SizeDelta: {x: -80, y: -1018.66156}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2111716900
@@ -6152,7 +6093,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -275397.7, y: 0}
+  m_AnchoredPosition: {x: -545443.4, y: 0}
   m_SizeDelta: {x: 0, y: -0.6581421}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2134044450
@@ -6254,6 +6195,27 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 35833227107183812, guid: 825236dc1bf7296428d1327247796753,
+        type: 3}
+      propertyPath: ShopSkinList.Array.size
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 35833227107183812, guid: 825236dc1bf7296428d1327247796753,
+        type: 3}
+      propertyPath: ShopSkinList.Array.data[17].image
+      value: 
+      objectReference: {fileID: 21300000, guid: 73a6ebc3f88e50a4eaaa17b0386ad83f,
+        type: 3}
+    - target: {fileID: 35833227107183812, guid: 825236dc1bf7296428d1327247796753,
+        type: 3}
+      propertyPath: ShopSkinList.Array.data[17].prize
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 35833227107183812, guid: 825236dc1bf7296428d1327247796753,
+        type: 3}
+      propertyPath: ShopSkinList.Array.data[17].costType
+      value: gold
       objectReference: {fileID: 0}
     - target: {fileID: 35833227107183813, guid: 825236dc1bf7296428d1327247796753,
         type: 3}

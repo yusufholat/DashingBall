@@ -24,6 +24,7 @@ public class Item
         if (level < maxLevel)
             level++;
 
+        RefreshLevel();
         setLevelToCost();
         setLevelToCooldown();
         setNextLevelForPlayerPrefs();
@@ -34,22 +35,22 @@ public class Item
     public void RefreshCount()
     {
         if (name == "Energy")
-            count = PlayerPrefs.GetInt("energy", 50);
+            count = PlayerPrefs.GetInt("energy", GameManager.defaultItemCounts);
 
         else if (name == "AntiEnergy")
-            count = PlayerPrefs.GetInt("antienergy", 50);
+            count = PlayerPrefs.GetInt("antienergy", GameManager.defaultItemCounts);
 
         else if (name == "GoldenEnergy")
-            count = PlayerPrefs.GetInt("goldenenergy", 50);
+            count = PlayerPrefs.GetInt("goldenenergy", GameManager.defaultItemCounts);
 
         else if (name == "BlackHole")
-            count = PlayerPrefs.GetInt("blackhole", 50);
+            count = PlayerPrefs.GetInt("blackhole", GameManager.defaultItemCounts);
 
         else if (name == "TimeFreeze")
-            count = PlayerPrefs.GetInt("timefreeze", 50);
+            count = PlayerPrefs.GetInt("timefreeze", GameManager.defaultItemCounts);
 
         else if (name == "Shield")
-            count = PlayerPrefs.GetInt("shield", 50);
+            count = PlayerPrefs.GetInt("shield", GameManager.defaultItemCounts);
     }
 
 

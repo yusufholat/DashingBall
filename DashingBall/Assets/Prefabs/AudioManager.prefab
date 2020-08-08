@@ -46,7 +46,7 @@ MonoBehaviour:
   sounds:
   - name: MenuMusic
     clip: {fileID: 8300000, guid: 12016ff809f8c834e849e04a66fccc7b, type: 3}
-    volume: 0.7
+    volume: 0.3
     playOnAwake: 0
     source: {fileID: 0}
   - name: PlayerBounce
@@ -81,11 +81,26 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: LevelUpEnd
     clip: {fileID: 8300000, guid: a78b20e942f93b14e8c56408e67f2545, type: 3}
-    volume: 0.939
+    volume: 0.8
     playOnAwake: 0
     source: {fileID: 0}
   - name: GameOver
     clip: {fileID: 8300000, guid: cb4fee905283e45918e693acc4c42171, type: 3}
-    volume: 0.939
+    volume: 0.8
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: Error
+    clip: {fileID: 8300000, guid: ff93d7f46f4f043d1b0cce11752ce891, type: 3}
+    volume: 1
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: Upgrade
+    clip: {fileID: 8300000, guid: c50e15775b4ab4a518aa89e047c8ab61, type: 3}
+    volume: 0.5
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: UpgradeMax
+    clip: {fileID: 8300000, guid: 0211dd9afbece44958c3f08bfecd1492, type: 3}
+    volume: 0.5
     playOnAwake: 0
     source: {fileID: 0}

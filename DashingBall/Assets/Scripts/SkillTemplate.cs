@@ -13,7 +13,6 @@ public class SkillTemplate : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         cooldown = transform.GetChild(1).GetComponent<Slider>().maxValue;
-        Debug.Log(cooldown);
     }
 
     void Update()

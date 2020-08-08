@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShopSkinList:
-  - image: {fileID: 21300000, guid: 812ebaa1b6b43e140b1ead1660a64d03, type: 3}
+  - image: {fileID: 21300000, guid: 8779023c8d3df4b80966431c22c2ed5d, type: 3}
     prize: 0
     costType: gold
   - image: {fileID: 21300000, guid: 6141662e506bf7c4aafdc801110bf713, type: 3}
@@ -78,20 +78,20 @@ MonoBehaviour:
     prize: 750
     costType: gold
   - image: {fileID: 21300000, guid: 01712ad93277e7f48aeb3872579a26c1, type: 3}
-    prize: 250
+    prize: 50
     costType: energy
   - image: {fileID: 21300000, guid: 50281abf41a06094b90733c153f81c00, type: 3}
-    prize: 100
+    prize: 50
     costType: antienergy
   - image: {fileID: 21300000, guid: 6554c0cb4e1f68245afae1d8a3850016, type: 3}
-    prize: 200
+    prize: 50
     costType: goldenenergy
   - image: {fileID: 21300000, guid: 3cb97a70a92c5674ab1fd2810cc4394f, type: 3}
-    prize: 200
+    prize: 50
     costType: blackhole
   - image: {fileID: 21300000, guid: c64c01f307f534b4caf1319997610f48, type: 3}
-    prize: 100
+    prize: 50
     costType: timefreeze
   - image: {fileID: 21300000, guid: 3aa47b5c84bc57b4b81b32242ce81e31, type: 3}
-    prize: 100
+    prize: 50
     costType: shield

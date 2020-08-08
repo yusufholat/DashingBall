@@ -20,8 +20,8 @@ public static class ButtonExtension
 public class ShopManager : MonoBehaviour
 {
 
-    List<ShopSkin> ShopSkinList;
-    List<Item> ShopItemList;
+    //List<ShopSkin> ShopSkinList;
+    //List<Item> ShopItemList;
 
     public GameObject shopSkinTemplate;
     public Transform shopSkinScrollView;
@@ -37,123 +37,138 @@ public class ShopManager : MonoBehaviour
 
     public TextMeshProUGUI shopCoinText;
 
+
+    public static ShopManager instance;
+
+    private void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else Destroy(gameObject);
+    }
+
     void Start()
     {
+        PlayerPrefs.SetInt("skin0", 1); //set default skin true
+        shopCoinText.text = PlayerPrefs.GetInt("TotalCoin", GameManager.defaultTotalCoin).ToString(); //refresh coin for cointext
+    }
 
-        ShopSkinList = SkinManager.instance.ShopSkinList;
-        ShopItemList = ItemManager.instance.ItemList;
 
-        PlayerPrefs.SetInt("skin0", 1);
-        shopCoinText.text = PlayerPrefs.GetInt("TotalCoin", 3000).ToString();
-
-        for (int i = 0; i < ShopSkinList.Count; i++)
+    IEnumerator listItem()
+    {
+        for (int i = 0; i < ItemManager.instance.ItemList.Count; i++)
         {
+            yield return new WaitForSeconds(0.15f);
+            item = Instantiate(shopItemTemplate, shopItemScrollView);
+            item.transform.GetChild(0).GetComponent<Image>().sprite = ItemManager.instance.ItemList[i].image;
+            item.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = ItemManager.instance.ItemList[i].count.ToString();
+        }
+
+    }
+
+    IEnumerator listSkin()
+    {
+        for (int i = 0; i < SkinManager.instance.ShopSkinList.Count; i++)
+        {
+            yield return new WaitForSeconds(0.15f);
             skin = Instantiate(shopSkinTemplate, shopSkinScrollView);
-            skin.transform.GetChild(0).GetComponent<Image>().sprite = ShopSkinList[i].image;
-            skin.transform.GetChild(1).transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = ShopSkinList[i].prize.ToString();
+            skin.transform.GetChild(0).GetComponent<Image>().sprite = SkinManager.instance.ShopSkinList[i].image;
+            skin.transform.GetChild(1).transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = SkinManager.instance.ShopSkinList[i].prize.ToString();
             setCostType(i);
 
 
             buyButton = skin.transform.GetChild(1).GetComponent<Button>();
             selectButton = skin.transform.GetChild(2).GetComponent<Button>();
 
-
             buyButton.gameObject.SetActive(PlayerPrefs.GetInt("skin" + i, 0) == 0);
 
 
             if (buyButton.gameObject.activeSelf == true)
-            {
                 selectButton.gameObject.SetActive(false);
-            }
-            else
-            {
+
+            else {
                 selectButton.gameObject.SetActive(true);
+                shopSkinScrollView.GetChild(i).GetComponent<Animator>().SetBool("buyanim", true);
             }
 
+            if(i == PlayerPrefs.GetInt("CurrentSkin", 0))
+            {
+                selectButton = shopSkinScrollView.GetChild(i).GetChild(2).GetComponent<Button>(); //set current skin selected button to SELECTED text
+                selectButton.gameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "SELECTED";
+                shopSkinScrollView.GetChild(i).GetComponent<Animator>().SetBool("buyanim", true);
+            }
 
-
-            buyButton.AddEventListener(i, ShopItemButtonClicked);
+            buyButton.AddEventListener(i, ShopItemBuyButtonClicked);
             selectButton.AddEventListener(i, ShopItemSelectClicked);
-
         }
 
-        for (int i = 0; i < ShopItemList.Count; i++)
-        {
-            item = Instantiate(shopItemTemplate, shopItemScrollView);
-            item.transform.GetChild(0).GetComponent<Image>().sprite = ShopItemList[i].image;
-            item.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = ShopItemList[i].count.ToString();
-        }
-
-        selectButton = shopSkinScrollView.GetChild(PlayerPrefs.GetInt("CurrentSkinIndex", 0)).GetChild(2).GetComponent<Button>(); //set current skin selected button to SELECTED text
-        selectButton.gameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "SELECTED";
-
-        RefreshGold();
     }
 
-    void ShopItemButtonClicked(int itemIndex)
+
+
+    void ShopItemBuyButtonClicked(int itemIndex)
     {
-        Debug.Log("butontiklandi" + itemIndex);
-        if (HasEnoughGold(itemIndex, ShopSkinList[itemIndex].prize))
+        if (HasEnoughGold(itemIndex, SkinManager.instance.ShopSkinList[itemIndex].prize))
         {
+            ItemManager.instance.RefreshList();
+
             shopSkinScrollView.GetChild(itemIndex).GetChild(1).GetComponent<Button>().gameObject.SetActive(false);
             shopSkinScrollView.GetChild(itemIndex).GetChild(2).GetComponent<Button>().gameObject.SetActive(true);
-            PlayerPrefs.SetInt("skin" + itemIndex, 1);
-            RefreshGold();
+            PlayerPrefs.SetInt("skin" + itemIndex, 1); //set player prefs for bought skin
+            RefreshGoldAndItemCounts(); // refresh gold and item counts for shop panel ui
+
+
+            if (UpgradeManager.instance != null)
+                UpgradeManager.instance.RefreshItemCounts();
+
+            shopSkinScrollView.GetChild(itemIndex).GetComponent<Animator>().SetBool("buyanim", true);
+            FindObjectOfType<AudioManager>().Play("Upgrade");
+        }
+        else
+        {
+            shopSkinScrollView.GetChild(itemIndex).GetComponent<Animator>().SetTrigger("nomoneyanim");
+            FindObjectOfType<AudioManager>().Play("Error");
         }
     }
 
     void ShopItemSelectClicked(int itemIndex)
     {
-        for (int i = 0; i < ShopSkinList.Count; i++)
+        for (int i = 0; i < SkinManager.instance.ShopSkinList.Count; i++)
         {
-
             selectButton = shopSkinScrollView.GetChild(i).GetChild(2).GetComponent<Button>();
             selectButton.gameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "SELECT";
             if (i == itemIndex)
             {
                 selectButton = shopSkinScrollView.GetChild(i).GetChild(2).GetComponent<Button>();
                 selectButton.gameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "SELECTED";
+                shopSkinScrollView.GetChild(i).GetComponent<Animator>().SetTrigger("buyanim");
             }
         }
 
-        PlayerPrefs.SetInt("CurrentSkinIndex", itemIndex);
-        PlayerManager.instance.updateCurrentSkin(itemIndex);
+        PlayerManager.instance.updateCurrentSkin(itemIndex); //selected current item index for player prefs
         PlayerManager.instance.RefreshSkin();
     }
 
 
-    void RefreshGold()
-    {
-        shopCoinText.text = PlayerPrefs.GetInt("TotalCoin", 3000).ToString();
-
-        shopItemScrollView.GetChild(0).GetChild(1).GetComponent<TextMeshProUGUI>().text = PlayerPrefs.GetInt("energy", 50).ToString();
-        shopItemScrollView.GetChild(1).GetChild(1).GetComponent<TextMeshProUGUI>().text = PlayerPrefs.GetInt("antienergy", 50).ToString();
-        shopItemScrollView.GetChild(2).GetChild(1).GetComponent<TextMeshProUGUI>().text = PlayerPrefs.GetInt("goldenenergy", 50).ToString();
-        shopItemScrollView.GetChild(3).GetChild(1).GetComponent<TextMeshProUGUI>().text = PlayerPrefs.GetInt("blackhole", 50).ToString();
-        shopItemScrollView.GetChild(4).GetChild(1).GetComponent<TextMeshProUGUI>().text = PlayerPrefs.GetInt("timefreeze", 50).ToString();
-        shopItemScrollView.GetChild(5).GetChild(1).GetComponent<TextMeshProUGUI>().text = PlayerPrefs.GetInt("shield", 50).ToString();
-    }
-
     bool HasEnoughGold(int index, int prize)
     {
-        if(ShopSkinList[index].costType == "gold")
+        if(SkinManager.instance.ShopSkinList[index].costType == "gold")
         {
-            if (PlayerPrefs.GetInt("TotalCoin", 3000) >= prize)
+            if (PlayerPrefs.GetInt("TotalCoin", GameManager.defaultTotalCoin) >= prize)
             {
-                int totalCoin = PlayerPrefs.GetInt("TotalCoin", 3000);
+                int totalCoin = PlayerPrefs.GetInt("TotalCoin", GameManager.defaultTotalCoin);
                 totalCoin -= prize;
                 PlayerPrefs.SetInt("TotalCoin", totalCoin);
-                Debug.Log("satinalindi");
                 return true;
             }
             else return false;
         }
 
-        else if (ShopSkinList[index].costType == "energy")
+        else if (SkinManager.instance.ShopSkinList[index].costType == "energy")
         {
-            if (PlayerPrefs.GetInt("energy", 0) >= prize)
+            if (PlayerPrefs.GetInt("energy", 50) >= prize)
             {
-                int totalEnergy = PlayerPrefs.GetInt("energy", 50);
+                int totalEnergy = PlayerPrefs.GetInt("energy", GameManager.defaultItemCounts);
                 totalEnergy -= prize;
                 PlayerPrefs.SetInt("energy", totalEnergy);
                 return true;
@@ -161,11 +176,11 @@ public class ShopManager : MonoBehaviour
             else return false;
         }
 
-        else if (ShopSkinList[index].costType == "antienergy")
+        else if (SkinManager.instance.ShopSkinList[index].costType == "antienergy")
         {
-            if (PlayerPrefs.GetInt("antienergy", 0) >= prize)
+            if (PlayerPrefs.GetInt("antienergy", GameManager.defaultItemCounts) >= prize)
             {
-                int totalAntiEnergy = PlayerPrefs.GetInt("antienergy", 50);
+                int totalAntiEnergy = PlayerPrefs.GetInt("antienergy", GameManager.defaultItemCounts);
                 totalAntiEnergy -= prize;
                 PlayerPrefs.SetInt("antienergy", totalAntiEnergy);
                 return true;
@@ -173,11 +188,11 @@ public class ShopManager : MonoBehaviour
             else return false;
         }
 
-        else if (ShopSkinList[index].costType == "goldenenergy")
+        else if (SkinManager.instance.ShopSkinList[index].costType == "goldenenergy")
         {
-            if (PlayerPrefs.GetInt("goldenenergy", 0) >= prize)
+            if (PlayerPrefs.GetInt("goldenenergy", GameManager.defaultItemCounts) >= prize)
             {
-                int totalGoldenEnergy = PlayerPrefs.GetInt("goldenenergy", 50);
+                int totalGoldenEnergy = PlayerPrefs.GetInt("goldenenergy", GameManager.defaultItemCounts);
                 totalGoldenEnergy -= prize;
                 PlayerPrefs.SetInt("goldenenergy", totalGoldenEnergy);
                 return true;
@@ -185,11 +200,11 @@ public class ShopManager : MonoBehaviour
             else return false;
         }
 
-        else if (ShopSkinList[index].costType == "blackhole")
+        else if (SkinManager.instance.ShopSkinList[index].costType == "blackhole")
         {
-            if (PlayerPrefs.GetInt("blackhole", 0) >= prize)
+            if (PlayerPrefs.GetInt("blackhole", GameManager.defaultItemCounts) >= prize)
             {
-                int totalBlackHole = PlayerPrefs.GetInt("blackhole", 50);
+                int totalBlackHole = PlayerPrefs.GetInt("blackhole", GameManager.defaultItemCounts);
                 totalBlackHole -= prize;
                 PlayerPrefs.SetInt("blackhole", totalBlackHole);
                 return true;
@@ -197,11 +212,11 @@ public class ShopManager : MonoBehaviour
             else return false;
         }
 
-        else if (ShopSkinList[index].costType == "timefreeze")
+        else if (SkinManager.instance.ShopSkinList[index].costType == "timefreeze")
         {
-            if (PlayerPrefs.GetInt("timefreeze", 0) >= prize)
+            if (PlayerPrefs.GetInt("timefreeze", GameManager.defaultItemCounts) >= prize)
             {
-                int totalTimeFreeze = PlayerPrefs.GetInt("timefreeze", 50);
+                int totalTimeFreeze = PlayerPrefs.GetInt("timefreeze", GameManager.defaultItemCounts);
                 totalTimeFreeze -= prize;
                 PlayerPrefs.SetInt("timefreeze", totalTimeFreeze);
                 return true;
@@ -209,11 +224,11 @@ public class ShopManager : MonoBehaviour
             else return false;
         }
 
-        else if (ShopSkinList[index].costType == "shield")
+        else if (SkinManager.instance.ShopSkinList[index].costType == "shield")
         {
-            if (PlayerPrefs.GetInt("shield", 0) >= prize)
+            if (PlayerPrefs.GetInt("shield", GameManager.defaultItemCounts) >= prize)
             {
-                int totalShield = PlayerPrefs.GetInt("shield", 50);
+                int totalShield = PlayerPrefs.GetInt("shield", GameManager.defaultItemCounts);
                 totalShield -= prize;
                 PlayerPrefs.SetInt("shield", totalShield);
                 return true;
@@ -224,20 +239,70 @@ public class ShopManager : MonoBehaviour
         else return false;
     }
 
+
+    public void RefreshGoldAndItemCounts()
+    {
+        shopCoinText.text = PlayerPrefs.GetInt("TotalCoin", GameManager.defaultTotalCoin).ToString();
+
+        shopItemScrollView.GetChild(0).GetChild(1).GetComponent<TextMeshProUGUI>().text = PlayerPrefs.GetInt("energy", GameManager.defaultItemCounts).ToString();
+        shopItemScrollView.GetChild(1).GetChild(1).GetComponent<TextMeshProUGUI>().text = PlayerPrefs.GetInt("antienergy", GameManager.defaultItemCounts).ToString();
+        shopItemScrollView.GetChild(2).GetChild(1).GetComponent<TextMeshProUGUI>().text = PlayerPrefs.GetInt("goldenenergy", GameManager.defaultItemCounts).ToString();
+        shopItemScrollView.GetChild(3).GetChild(1).GetComponent<TextMeshProUGUI>().text = PlayerPrefs.GetInt("blackhole", GameManager.defaultItemCounts).ToString();
+        shopItemScrollView.GetChild(4).GetChild(1).GetComponent<TextMeshProUGUI>().text = PlayerPrefs.GetInt("timefreeze", GameManager.defaultItemCounts).ToString();
+        shopItemScrollView.GetChild(5).GetChild(1).GetComponent<TextMeshProUGUI>().text = PlayerPrefs.GetInt("shield", GameManager.defaultItemCounts).ToString();
+    }
+
+
+
     void setCostType(int index)
     {
-        if (ShopSkinList[index].costType == "energy")
-            skin.transform.GetChild(1).transform.GetChild(1).GetComponent<Image>().sprite = ItemManager.instance.getImage("itemEnergy");
-        else if (ShopSkinList[index].costType == "antienergy")
-            skin.transform.GetChild(1).transform.GetChild(1).GetComponent<Image>().sprite = ItemManager.instance.getImage("itemAntiEnergy");
-        else if (ShopSkinList[index].costType == "goldenenergy")
-            skin.transform.GetChild(1).transform.GetChild(1).GetComponent<Image>().sprite = ItemManager.instance.getImage("itemGoldenEnergy");
-        else if (ShopSkinList[index].costType == "blackhole")
-            skin.transform.GetChild(1).transform.GetChild(1).GetComponent<Image>().sprite = ItemManager.instance.getImage("itemBlackHole");
-        else if (ShopSkinList[index].costType == "timefreeze")
-            skin.transform.GetChild(1).transform.GetChild(1).GetComponent<Image>().sprite = ItemManager.instance.getImage("itemTimeFreeze");
-        else if (ShopSkinList[index].costType == "shield")
-            skin.transform.GetChild(1).transform.GetChild(1).GetComponent<Image>().sprite = ItemManager.instance.getImage("itemShield");
+        if (SkinManager.instance.ShopSkinList[index].costType == "energy")
+            skin.transform.GetChild(1).transform.GetChild(1).GetComponent<Image>().sprite = ItemManager.instance.getImage("Energy");
+
+        else if (SkinManager.instance.ShopSkinList[index].costType == "antienergy")
+            skin.transform.GetChild(1).transform.GetChild(1).GetComponent<Image>().sprite = ItemManager.instance.getImage("AntiEnergy");
+
+        else if (SkinManager.instance.ShopSkinList[index].costType == "goldenenergy")
+            skin.transform.GetChild(1).transform.GetChild(1).GetComponent<Image>().sprite = ItemManager.instance.getImage("GoldenEnergy");
+
+        else if (SkinManager.instance.ShopSkinList[index].costType == "blackhole")
+            skin.transform.GetChild(1).transform.GetChild(1).GetComponent<Image>().sprite = ItemManager.instance.getImage("BlackHole");
+
+        else if (SkinManager.instance.ShopSkinList[index].costType == "timefreeze")
+            skin.transform.GetChild(1).transform.GetChild(1).GetComponent<Image>().sprite = ItemManager.instance.getImage("TimeFreeze");
+
+        else if (SkinManager.instance.ShopSkinList[index].costType == "shield")
+            skin.transform.GetChild(1).transform.GetChild(1).GetComponent<Image>().sprite = ItemManager.instance.getImage("Shield");
+
+    }
+
+
+    public void RefreshItemCounts()
+    {
+        for (int i = 0; i < ItemManager.instance.ItemList.Count; i++)
+        {
+            if (shopItemScrollView.childCount != 0)
+                shopItemScrollView.GetChild(i).GetChild(1).GetComponent<TextMeshProUGUI>().text = ItemManager.instance.ItemList[i].count.ToString();
+        }
+    }
+
+    public void ListItemsAgain()
+    {
+        if(shopSkinScrollView.childCount > 0)
+        {
+            for (int i = 0; i < SkinManager.instance.ShopSkinList.Count; i++)
+            {
+                if(shopSkinScrollView.GetChild(i) != null)
+                    Destroy(shopSkinScrollView.GetChild(i).gameObject);
+            }
+            for (int i = 0; i < ItemManager.instance.ItemList.Count; i++)
+            {
+                if (shopItemScrollView.GetChild(i) != null)
+                    Destroy(shopItemScrollView.GetChild(i).gameObject);
+            }
+        }
+        StartCoroutine(listItem());
+        StartCoroutine(listSkin());
     }
 
 }

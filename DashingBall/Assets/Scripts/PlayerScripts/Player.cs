@@ -28,7 +28,6 @@ public class Player : MonoBehaviour
         PlayerManager.score = 0;
         PlayerManager.maxHealth = 100;
         PlayerManager.currentHealth = 100;
-        PlayerManager.goldenEnergyPower = false;
         maxHealth = 100;
         currentHealth = 100;
         dashSpend = 20;

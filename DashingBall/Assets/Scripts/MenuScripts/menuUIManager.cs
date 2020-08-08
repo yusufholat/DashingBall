@@ -55,6 +55,22 @@ public class menuUIManager : MonoBehaviour
         SceneManager.LoadScene("Game");
     }
 
+    public void OpenTutorial()
+    {
+        StartCoroutine(LoadTutorial());
+    }
+
+    IEnumerator LoadTutorial()
+    {
+        transition.SetTrigger("tutorial");
+        yield return new WaitForSeconds(1f);
+        FindObjectOfType<AudioManager>().Stop("MenuMusic");
+        GameManager.MenuMusicPlaying = true;
+        GameManager.tutorialStarted = true;
+        GameManager.tutorialInstantieted = true;
+        SceneManager.LoadScene("Tutorial");
+    }
+
     private void Update()
     {
         if(GameManager.musicOn == true)

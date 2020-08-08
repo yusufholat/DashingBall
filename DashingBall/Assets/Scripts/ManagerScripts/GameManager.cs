@@ -9,10 +9,12 @@ public class GameManager : MonoBehaviour
 {
     public static bool gameStarded;
     public static bool gameOver = false;
-    
+
+    public static bool tutorialStarted;
+
     public static bool musicOn;
     public static bool vibrationOn = true;
-    public static bool MenuMusicPlaying;
+    public static bool MenuMusicPlaying = false;
 
     int nextTime = 0, rate = 30;
     float gametime = 0;
@@ -23,6 +25,11 @@ public class GameManager : MonoBehaviour
 
     public Color menuColor;
 
+    public static bool tutorialInstantieted = false;
+
+    public static int defaultItemCounts = 15;
+    public static int defaultTotalCoin = 1000;
+
     public static GameManager instance;
     private void Awake()
     {
@@ -30,14 +37,23 @@ public class GameManager : MonoBehaviour
             instance = this;
         else Destroy(gameObject);
 
+        if ((PlayerPrefs.GetInt("ComplateTutorial", 0) == 0))
+        {
+            SceneManager.LoadScene("Tutorial");
+            PlayerPrefs.SetInt("ComplateTutorial", 1);
+            FindObjectOfType<AudioManager>().Stop("MenuMusic");
+            MenuMusicPlaying = true;
+            tutorialStarted = true;
+            tutorialInstantieted = true;
+        }
         DontDestroyOnLoad(gameObject);
     }
 
     void Start()
     {
         gameStarded = false;
+        tutorialStarted = false;
         musicOn = (PlayerPrefs.GetInt("MusicOn", 1) != 0);
-        MenuMusicPlaying = false;
         Camera.main.backgroundColor = menuColor;
 
     }
@@ -84,6 +100,7 @@ public class GameManager : MonoBehaviour
 
         FindObjectOfType<AudioManager>().Play("GameOver");
         SetPlayerPrefs();
+        ItemManager.instance.RefreshList();
     }
 
 
@@ -164,33 +181,33 @@ public class GameManager : MonoBehaviour
         if (PlayerManager.score > PlayerPrefs.GetInt("HighScore", 0))
             PlayerPrefs.SetInt("HighScore", PlayerManager.score);
 
-        if (PlayerManager.score + PlayerPrefs.GetInt("TotalCoin", 1000) > 9999)
+        if (PlayerManager.score + PlayerPrefs.GetInt("TotalCoin", defaultTotalCoin) > 9999)
             PlayerPrefs.SetInt("TotalCoin", 999);
-        else PlayerPrefs.SetInt("TotalCoin", PlayerManager.score + PlayerPrefs.GetInt("TotalCoin", 3000));
+        else PlayerPrefs.SetInt("TotalCoin", PlayerManager.score + PlayerPrefs.GetInt("TotalCoin", defaultTotalCoin));
 
-        if (PlayerManager.countEnergy + PlayerPrefs.GetInt("energy", 0) > 999)
+        if (PlayerManager.countEnergy + PlayerPrefs.GetInt("energy", defaultItemCounts) > 999)
             PlayerPrefs.SetInt("energy", 999);
-        else PlayerPrefs.SetInt("energy", PlayerManager.countEnergy + PlayerPrefs.GetInt("energy", 50));
+        else PlayerPrefs.SetInt("energy", PlayerManager.countEnergy + PlayerPrefs.GetInt("energy", defaultItemCounts));
 
-        if (PlayerManager.countAntiEnergy + PlayerPrefs.GetInt("antienergy", 0) > 999)
+        if (PlayerManager.countAntiEnergy + PlayerPrefs.GetInt("antienergy", defaultItemCounts) > 999)
             PlayerPrefs.SetInt("antienergy", 999);
-        else PlayerPrefs.SetInt("antienergy", PlayerManager.countAntiEnergy + PlayerPrefs.GetInt("antienergy", 50));
+        else PlayerPrefs.SetInt("antienergy", PlayerManager.countAntiEnergy + PlayerPrefs.GetInt("antienergy", defaultItemCounts));
 
-        if (PlayerManager.countGoldenEnergy + PlayerPrefs.GetInt("goldenenergy", 0) > 999)
+        if (PlayerManager.countGoldenEnergy + PlayerPrefs.GetInt("goldenenergy", defaultItemCounts) > 999)
             PlayerPrefs.SetInt("goldenenergy", 999);
-        else PlayerPrefs.SetInt("goldenenergy", PlayerManager.countGoldenEnergy + PlayerPrefs.GetInt("goldenenergy", 50));
+        else PlayerPrefs.SetInt("goldenenergy", PlayerManager.countGoldenEnergy + PlayerPrefs.GetInt("goldenenergy", defaultItemCounts));
 
-        if (PlayerManager.countBlackHole + PlayerPrefs.GetInt("blackhole", 0) > 999)
+        if (PlayerManager.countBlackHole + PlayerPrefs.GetInt("blackhole", defaultItemCounts) > 999)
             PlayerPrefs.SetInt("blackhole", 999);
-        else PlayerPrefs.SetInt("blackhole", PlayerManager.countBlackHole + PlayerPrefs.GetInt("blackhole", 50));
+        else PlayerPrefs.SetInt("blackhole", PlayerManager.countBlackHole + PlayerPrefs.GetInt("blackhole", defaultItemCounts));
 
-        if (PlayerManager.countTimeFreeze + PlayerPrefs.GetInt("timefreeze", 0) > 999)
+        if (PlayerManager.countTimeFreeze + PlayerPrefs.GetInt("timefreeze", defaultItemCounts) > 999)
             PlayerPrefs.SetInt("timefreeze", 999);
-        else PlayerPrefs.SetInt("timefreeze", PlayerManager.countTimeFreeze + PlayerPrefs.GetInt("timefreeze", 50));
+        else PlayerPrefs.SetInt("timefreeze", PlayerManager.countTimeFreeze + PlayerPrefs.GetInt("timefreeze", defaultItemCounts));
 
-        if (PlayerManager.countShield + PlayerPrefs.GetInt("shield", 0) > 999)
+        if (PlayerManager.countShield + PlayerPrefs.GetInt("shield", defaultItemCounts) > 999)
             PlayerPrefs.SetInt("shield", 999);
-        else PlayerPrefs.SetInt("shield", PlayerManager.countShield + PlayerPrefs.GetInt("shield", 50));
+        else PlayerPrefs.SetInt("shield", PlayerManager.countShield + PlayerPrefs.GetInt("shield", defaultItemCounts));
 
     }
 

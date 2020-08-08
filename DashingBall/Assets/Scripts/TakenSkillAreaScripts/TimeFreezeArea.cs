@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class TimeFreezeArea : MonoBehaviour
 {
-    void Start()
+    private void Awake()
     {
         float cooldown = ItemManager.instance.getCooldown("TimeFreeze");
         var main = GetComponent<ParticleSystem>().main;
-        main.duration = cooldown -2f; // last particle effect lifetime
+        main.duration = cooldown - 2f; // last particle effect lifetime
     }
+
 }

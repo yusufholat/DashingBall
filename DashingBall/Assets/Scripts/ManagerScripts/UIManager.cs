@@ -20,16 +20,17 @@ public class UIManager : MonoBehaviour
 
     Animator transition;
 
+
     private void Start()
     {
         transition = GetComponent<Animator>();    
     }
 
+
     public void restartGame()
     {
         StartCoroutine(Restart());
     }
-
     IEnumerator Restart()
     {
         Time.timeScale = 1f;
@@ -37,6 +38,7 @@ public class UIManager : MonoBehaviour
         yield return new WaitForSeconds(1f);
         GameManager.instance.restartGame();
     }
+
 
     private void Update()
     {
@@ -61,11 +63,11 @@ public class UIManager : MonoBehaviour
         }
     }
 
+
     public void goToMenu()
     {
         StartCoroutine(GoToMenu());        
     }
-
     IEnumerator GoToMenu()
     {
         Time.timeScale = 1f;

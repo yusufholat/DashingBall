@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ShopOutside : MonoBehaviour
 {
 
-    BoxCollider2D collider;
+    BoxCollider2D boxCollider;
     RectTransform rectTransform;
     Image panelImage;
 
@@ -14,7 +14,7 @@ public class ShopOutside : MonoBehaviour
     {
         rectTransform = GetComponent<RectTransform>();
         panelImage = GetComponent<Image>();
-        collider = GetComponent<BoxCollider2D>();
+        boxCollider = GetComponent<BoxCollider2D>();
 
         SetBoxCollider();
     }
@@ -28,7 +28,7 @@ public class ShopOutside : MonoBehaviour
     void SetBoxCollider()
     {
 
-        if (collider != null)
+        if (boxCollider != null)
         {
             Image image = rectTransform.gameObject.GetComponent<Image>();
 
@@ -46,12 +46,12 @@ public class ShopOutside : MonoBehaviour
                 var newW = image.sprite.rect.width * ratio;
                 var newH = image.sprite.rect.height * ratio;
 
-                collider.size = new Vector2(newW, newH);
+                boxCollider.size = new Vector2(newW, newH);
             }
             else
             {
 
-                collider.size = image.rectTransform.rect.size;
+                boxCollider.size = image.rectTransform.rect.size;
 
             }
         }

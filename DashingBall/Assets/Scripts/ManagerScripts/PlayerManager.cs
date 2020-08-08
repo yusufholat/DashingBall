@@ -9,21 +9,19 @@ public class PlayerManager : MonoBehaviour
 
     public GameObject playerTemplate;
 
-    public static GameObject instantiatedPlayer;
-
-    public static int totalCoin;
+    static GameObject instantiatedPlayer;
+    
     public static float maxHealth;
     public static float currentHealth;
     public static int score;
 
+    public static int totalCoin;
     public static int countEnergy = 0;
     public static int countAntiEnergy = 0;
     public static int countGoldenEnergy = 0;
     public static int countBlackHole = 0;
     public static int countTimeFreeze = 0;
     public static int countShield = 0;
-    public static int countDestroyEnemy = 0;
-    public static int countPerfect = 0;
 
 
     public static bool goldenEnergyPower = false;
@@ -36,7 +34,8 @@ public class PlayerManager : MonoBehaviour
         else            
             Destroy(gameObject);
 
-        instantiatedPlayer = Instantiate(playerTemplate, new Vector2(0, -2), Quaternion.identity);
+        if(!GameManager.tutorialInstantieted)
+        instantiatedPlayer = Instantiate(playerTemplate, new Vector2(0, -4), Quaternion.identity);
 
         DontDestroyOnLoad(gameObject);
     }
@@ -56,8 +55,6 @@ public class PlayerManager : MonoBehaviour
     {
         instantiatedPlayer.GetComponent<SpriteRenderer>().sprite = SkinManager.instance.ShopSkinList[PlayerPrefs.GetInt("CurrentSkin", 0)].image;
     }
-
-
 
 
     public void takeGoldenEnergy()
@@ -123,8 +120,6 @@ public class PlayerManager : MonoBehaviour
     }
 
 
-
-
     public void resetCounter()
     {
         countEnergy = 0;
@@ -133,8 +128,6 @@ public class PlayerManager : MonoBehaviour
         countBlackHole = 0;
         countTimeFreeze = 0;
         countShield = 0;
-        countDestroyEnemy = 0;
-        countPerfect = 0;
     }
 
 }

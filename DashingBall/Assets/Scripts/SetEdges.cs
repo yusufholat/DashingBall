@@ -9,7 +9,6 @@ public class SetEdges : MonoBehaviour
     List<Vector2> newVerticies = new List<Vector2>();
     EdgeCollider2D col;
 
-
     private void Awake()
     {
         var lowerLeft = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 0));
@@ -20,10 +19,12 @@ public class SetEdges : MonoBehaviour
         minY = lowerLeft.y;
 
         col = GetComponent<EdgeCollider2D>();
+
         newVerticies.Add(new Vector2(minX, maxY));
         newVerticies.Add(new Vector2(minX, minY));
         newVerticies.Add(new Vector2(maxX, minY));
         newVerticies.Add(new Vector2(maxX, maxY));
+
     }
 
     void Start()
@@ -31,4 +32,8 @@ public class SetEdges : MonoBehaviour
         col.points = newVerticies.ToArray();
     }
 
+    private void Update()
+    {
+        int health = (int)PlayerManager.currentHealth;
+    }
 }
