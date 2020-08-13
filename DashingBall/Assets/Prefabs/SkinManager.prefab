@@ -44,54 +44,83 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShopSkinList:
-  - image: {fileID: 21300000, guid: 8779023c8d3df4b80966431c22c2ed5d, type: 3}
-    prize: 0
+  - name: default
+    image: {fileID: 21300000, guid: 02340e663df0b4890b102de9d287e0fc, type: 3}
+    prize: 500
     costType: gold
-  - image: {fileID: 21300000, guid: 6141662e506bf7c4aafdc801110bf713, type: 3}
+  - name: black
+    image: {fileID: 21300000, guid: e26903e4776aa4b1abf78736c9d996cf, type: 3}
+    prize: 500
+    costType: gold
+  - name: purple
+    image: {fileID: 21300000, guid: 02e4ecee563a34a5fa4e66b70fc61f49, type: 3}
+    prize: 500
+    costType: gold
+  - name: colored
+    image: {fileID: 21300000, guid: b95efdb567f9446bea9ddc0715192641, type: 3}
+    prize: 750
+    costType: gold
+  - name: kebapskin
+    image: {fileID: 21300000, guid: b80bd407cddc04969ae35d7201e4e4ce, type: 3}
+    prize: 750
+    costType: gold
+  - name: colorfull
+    image: {fileID: 21300000, guid: d88b4fb50cc504865bc9a5e03d258675, type: 3}
+    prize: 750
+    costType: gold
+  - name: soccer
+    image: {fileID: 21300000, guid: bc7dc8b24d88d41ce96c8106bb6e6c1c, type: 3}
+    prize: 1000
+    costType: gold
+  - name: basketball
+    image: {fileID: 21300000, guid: 274cb8dab2388450c900ad1371f61f7a, type: 3}
+    prize: 1000
+    costType: gold
+  - name: tennis
+    image: {fileID: 21300000, guid: 9fa9f7a4531f945cd9fbbe43e5a7a676, type: 3}
+    prize: 1000
+    costType: gold
+  - name: plazma
+    image: {fileID: 21300000, guid: 87be2d6e3198040b9a75636581058e7b, type: 3}
+    prize: 1500
+    costType: gold
+  - name: energyball
+    image: {fileID: 21300000, guid: 72caf9441414b47df9b42c69b0664607, type: 3}
+    prize: 1500
+    costType: gold
+  - name: sun
+    image: {fileID: 21300000, guid: e24489e3a3b2d4d548a50d7bc27a8be0, type: 3}
+    prize: 1500
+    costType: gold
+  - name: yinyang
+    image: {fileID: 21300000, guid: 8bb615eace5ea40c9b8231cbeaba9bad, type: 3}
+    prize: 2000
+    costType: gold
+  - name: pokeball
+    image: {fileID: 21300000, guid: c6c6caa8b689f4f4985fbec485e96e38, type: 3}
+    prize: 2000
+    costType: gold
+  - name: greenmania
+    image: {fileID: 21300000, guid: 6d550478624bb427b815ffea625d0bf7, type: 3}
     prize: 200
-    costType: gold
-  - image: {fileID: 21300000, guid: 21f81b44f5c13554588be7903349f541, type: 3}
-    prize: 200
-    costType: gold
-  - image: {fileID: 21300000, guid: b55d48c3a1e831f43816e38f6f7d24e1, type: 3}
-    prize: 300
-    costType: gold
-  - image: {fileID: 21300000, guid: 603b1c00cdf24a04b8172e61360e3e87, type: 3}
-    prize: 300
-    costType: gold
-  - image: {fileID: 21300000, guid: 5960b1caab8074a498e39c90127426bf, type: 3}
-    prize: 500
-    costType: gold
-  - image: {fileID: 21300000, guid: 84c5c2f70829e7c49a7cd530666e2710, type: 3}
-    prize: 500
-    costType: gold
-  - image: {fileID: 21300000, guid: 89103185d955247429ab54f520ad45af, type: 3}
-    prize: 500
-    costType: gold
-  - image: {fileID: 21300000, guid: 8bfab993675781640846e36281bee43c, type: 3}
-    prize: 750
-    costType: gold
-  - image: {fileID: 21300000, guid: 7a374859db5870f4992fd5c6efe8e840, type: 3}
-    prize: 750
-    costType: gold
-  - image: {fileID: 21300000, guid: 7453f3338218d0d4486a19fc4257f87f, type: 3}
-    prize: 750
-    costType: gold
-  - image: {fileID: 21300000, guid: 01712ad93277e7f48aeb3872579a26c1, type: 3}
-    prize: 50
     costType: energy
-  - image: {fileID: 21300000, guid: 50281abf41a06094b90733c153f81c00, type: 3}
-    prize: 50
+  - name: redhole
+    image: {fileID: 21300000, guid: b9a6c5790324142fa99f49080e1ebae6, type: 3}
+    prize: 200
     costType: antienergy
-  - image: {fileID: 21300000, guid: 6554c0cb4e1f68245afae1d8a3850016, type: 3}
-    prize: 50
+  - name: radioactive
+    image: {fileID: 21300000, guid: 92924aa2170c04497b135b2c02a7625d, type: 3}
+    prize: 100
     costType: goldenenergy
-  - image: {fileID: 21300000, guid: 3cb97a70a92c5674ab1fd2810cc4394f, type: 3}
-    prize: 50
+  - name: darkhole
+    image: {fileID: 21300000, guid: 106df9947afa14fbd9c2b56051c55878, type: 3}
+    prize: 100
     costType: blackhole
-  - image: {fileID: 21300000, guid: c64c01f307f534b4caf1319997610f48, type: 3}
+  - name: robotic
+    image: {fileID: 21300000, guid: b129e2637a8bd47cd822446dbea9b74d, type: 3}
     prize: 50
     costType: timefreeze
-  - image: {fileID: 21300000, guid: 3aa47b5c84bc57b4b81b32242ce81e31, type: 3}
+  - name: transparant
+    image: {fileID: 21300000, guid: f0b19e16498c34483a8f9fa0e9d81167, type: 3}
     prize: 50
     costType: shield

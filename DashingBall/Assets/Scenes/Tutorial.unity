@@ -160,7 +160,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -177.02997, y: 87.29999}
+  m_AnchoredPosition: {x: -177.03003, y: 87.299805}
   m_SizeDelta: {x: 243.10498, y: 90.1225}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &22061477
@@ -470,7 +470,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 1b5543f93fc9444d79e5df85bfe8fd74, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
@@ -565,7 +565,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0.0037842, y: -42.431885}
+  m_AnchoredPosition: {x: 0.0037842, y: -42.43164}
   m_SizeDelta: {x: 141.1458, y: 201.83878}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &89968041
@@ -719,7 +719,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -177.02997, y: 87.29999}
+  m_AnchoredPosition: {x: -177.03003, y: 87.299805}
   m_SizeDelta: {x: 243.10498, y: 90.1225}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &134337621
@@ -985,7 +985,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &157090599
 GameObject:
@@ -1265,7 +1265,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.19995117}
+  m_AnchoredPosition: {x: 0, y: -0.20019531}
   m_SizeDelta: {x: -110.962585, y: -105.074066}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &160761111
@@ -1322,7 +1322,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 15
   m_fontSizeMax: 150
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -1533,7 +1533,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 15
   m_fontSizeMax: 150
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -1634,7 +1634,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c4a8a139ecf617641b47b89bb2250019, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 27eb77c9b92544b4fb165ca4bd9622de, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1687,7 +1687,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0.0037842, y: -42.431885}
+  m_AnchoredPosition: {x: 0.0037842, y: -42.43164}
   m_SizeDelta: {x: 141.1458, y: 201.83878}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &220440850
@@ -1765,7 +1765,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -177.02997, y: 87.29999}
+  m_AnchoredPosition: {x: -177.03003, y: 87.299805}
   m_SizeDelta: {x: 243.10498, y: 90.1225}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &222468325
@@ -1967,7 +1967,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 15
   m_fontSizeMax: 150
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -2048,7 +2048,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -177.02997, y: 87.29999}
+  m_AnchoredPosition: {x: -177.03003, y: 87.299805}
   m_SizeDelta: {x: 243.10498, y: 90.1225}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &273486977
@@ -2363,7 +2363,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 15
   m_fontSizeMax: 150
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -2444,7 +2444,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 177.29999, y: 87.29999}
+  m_AnchoredPosition: {x: 177.30005, y: 87.299805}
   m_SizeDelta: {x: 243.10498, y: 90.1225}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &292152516
@@ -2589,7 +2589,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.00390625, y: -9.5998535}
+  m_AnchoredPosition: {x: 0.00390625, y: -9.599609}
   m_SizeDelta: {x: -110.962585, y: -353.70428}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &318235991
@@ -2612,7 +2612,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Bir miktar enerji verir.
+  m_text: "Enerjini bir miktar artt\u0131r\u0131r."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d7ee88d9062bf4fe5b6a98057ffda7cb, type: 2}
   m_sharedMaterial: {fileID: -4649764130494338027, guid: d7ee88d9062bf4fe5b6a98057ffda7cb,
@@ -2646,7 +2646,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 15
   m_fontSizeMax: 150
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -2856,7 +2856,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 15
   m_fontSizeMax: 150
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -3352,7 +3352,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 15
   m_fontSizeMax: 150
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -3481,13 +3481,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 58.4
+  m_fontSize: 58
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 15
   m_fontSizeMax: 150
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -3866,7 +3866,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0.0037842, y: -42.431885}
+  m_AnchoredPosition: {x: 0.0037842, y: -42.43164}
   m_SizeDelta: {x: 141.1458, y: 201.83878}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &528910814
@@ -3998,7 +3998,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 15
   m_fontSizeMax: 150
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -4134,7 +4134,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 15
   m_fontSizeMax: 150
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -4215,7 +4215,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -177.02997, y: 87.29999}
+  m_AnchoredPosition: {x: -177.03003, y: 87.299805}
   m_SizeDelta: {x: 243.10498, y: 90.1225}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &608829447
@@ -4381,7 +4381,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 1b5543f93fc9444d79e5df85bfe8fd74, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
@@ -4572,7 +4572,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 1b5543f93fc9444d79e5df85bfe8fd74, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
@@ -4669,7 +4669,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -177.02997, y: 87.29999}
+  m_AnchoredPosition: {x: -177.03003, y: 87.299805}
   m_SizeDelta: {x: 243.10498, y: 90.1225}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &669103573
@@ -4825,7 +4825,7 @@ PrefabInstance:
     - target: {fileID: 6909241171988598121, guid: 06649313cecda4868a4d507d6f3def1b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6909241171988598121, guid: 06649313cecda4868a4d507d6f3def1b,
         type: 3}
@@ -4906,7 +4906,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Yetenekleri en iyi \u015Fekilde oyunda deneyebilirsin!\nHadi ge\xE7elim!"
+  m_text: "Yetenekleri en iyi \u015Fekilde oyunda deneyip \xF6\u011Frenebilirsin.\nHadi
+    oyuna ge\xE7elim!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d7ee88d9062bf4fe5b6a98057ffda7cb, type: 2}
   m_sharedMaterial: {fileID: -4649764130494338027, guid: d7ee88d9062bf4fe5b6a98057ffda7cb,
@@ -4934,13 +4935,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 74.85
+  m_fontSize: 59.9
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 15
   m_fontSizeMax: 150
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -5039,7 +5040,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 1b5543f93fc9444d79e5df85bfe8fd74, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
@@ -5265,7 +5266,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 15
   m_fontSizeMax: 150
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -5466,7 +5467,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 15
   m_fontSizeMax: 150
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -5547,7 +5548,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -177.02997, y: 87.29999}
+  m_AnchoredPosition: {x: -177.03003, y: 87.299805}
   m_SizeDelta: {x: 243.10498, y: 90.1225}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &841221126
@@ -5692,7 +5693,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.00390625, y: -8.300049}
+  m_AnchoredPosition: {x: 0.00390625, y: -8.299805}
   m_SizeDelta: {x: -110.962585, y: -351.16754}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &848065457
@@ -5715,8 +5716,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Ald\u0131\u011F\u0131n yerde bir kara delik a\xE7\u0131l\u0131r ve i\xE7ine
-    giren herkesi yokeder."
+  m_text: "Ald\u0131\u011F\u0131n yerde bir kara delik a\xE7\u0131l\u0131r! D\xF6nmeye
+    ba\u015Flad\u0131\u011F\u0131nda i\xE7ine giren herkesi yokeder."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d7ee88d9062bf4fe5b6a98057ffda7cb, type: 2}
   m_sharedMaterial: {fileID: -4649764130494338027, guid: d7ee88d9062bf4fe5b6a98057ffda7cb,
@@ -5750,7 +5751,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 15
   m_fontSizeMax: 150
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -5844,7 +5845,7 @@ PrefabInstance:
     - target: {fileID: 3756315395840787618, guid: e4f35dc48c03fcb419930adb757e4c17,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3756315395840787618, guid: e4f35dc48c03fcb419930adb757e4c17,
         type: 3}
@@ -5917,7 +5918,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 1b5543f93fc9444d79e5df85bfe8fd74, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
@@ -6143,7 +6144,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 1b5543f93fc9444d79e5df85bfe8fd74, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
@@ -6336,7 +6337,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Harika! Topu kenarlara \xE7arpt\u0131rarak ve ya hareket ettirerek skorunu
+  m_text: "Harika! Topu, kenarlara \xE7arpt\u0131rarak veya hareket ettirerek skorunu
     artt\u0131rabilirsin."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d7ee88d9062bf4fe5b6a98057ffda7cb, type: 2}
@@ -6371,7 +6372,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 15
   m_fontSizeMax: 150
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -6792,7 +6793,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.00390625, y: -6.800049}
+  m_AnchoredPosition: {x: 0.00390625, y: -6.7998047}
   m_SizeDelta: {x: -110.962585, y: -348.08063}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1044200363
@@ -6850,7 +6851,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 15
   m_fontSizeMax: 150
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -6949,7 +6950,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 1b5543f93fc9444d79e5df85bfe8fd74, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
@@ -7222,7 +7223,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0.0037842, y: -42.431885}
+  m_AnchoredPosition: {x: 0.0037842, y: -42.43164}
   m_SizeDelta: {x: 141.1458, y: 201.83878}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1087012997
@@ -7412,7 +7413,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.19995117}
+  m_AnchoredPosition: {x: 0, y: -0.20019531}
   m_SizeDelta: {x: -110.962585, y: -105.074066}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1153200916
@@ -7470,7 +7471,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 15
   m_fontSizeMax: 150
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -7571,7 +7572,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Skoru artt\u0131rmay\u0131 \xF6\u011Frendik gibi. Yaln\u0131z topu hareket
+  m_text: "Skoru artt\u0131rmay\u0131 \xF6\u011Frendin gibi. Yaln\u0131z topu hareket
     ettirebilmen i\xE7in enerjiye de ihtiyac\u0131n var.\nEnerjini hemen bitirme!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d7ee88d9062bf4fe5b6a98057ffda7cb, type: 2}
@@ -7606,7 +7607,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 15
   m_fontSizeMax: 150
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -7684,7 +7685,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.19995117}
+  m_AnchoredPosition: {x: 0, y: -0.20019531}
   m_SizeDelta: {x: -110.962585, y: -105.074066}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1171695504
@@ -7742,7 +7743,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 15
   m_fontSizeMax: 150
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -7823,7 +7824,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -177.02997, y: 87.29999}
+  m_AnchoredPosition: {x: -177.03003, y: 87.299805}
   m_SizeDelta: {x: 243.10498, y: 90.1225}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1199693071
@@ -7979,7 +7980,7 @@ PrefabInstance:
     - target: {fileID: 8362331071542727969, guid: ba67e7caefa98ab41b804da4004e0434,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8362331071542727969, guid: ba67e7caefa98ab41b804da4004e0434,
         type: 3}
@@ -8212,7 +8213,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 15
   m_fontSizeMax: 150
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -8347,7 +8348,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 15
   m_fontSizeMax: 150
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -8482,7 +8483,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 15
   m_fontSizeMax: 150
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -8563,7 +8564,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -177.02997, y: 87.29999}
+  m_AnchoredPosition: {x: -177.03003, y: 87.299805}
   m_SizeDelta: {x: 243.10498, y: 90.1225}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1288300972
@@ -8703,7 +8704,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1295427177
 MonoBehaviour:
@@ -8906,7 +8907,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 15
   m_fontSizeMax: 150
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -8984,7 +8985,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -47.76001, y: -49.999756}
+  m_AnchoredPosition: {x: -47.76001, y: -50}
   m_SizeDelta: {x: 86.749405, y: 86.749405}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1327867493
@@ -9080,7 +9081,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 1b5543f93fc9444d79e5df85bfe8fd74, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
@@ -9598,7 +9599,7 @@ PrefabInstance:
     - target: {fileID: 35833227107183811, guid: 825236dc1bf7296428d1327247796753,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 35833227107183811, guid: 825236dc1bf7296428d1327247796753,
         type: 3}
@@ -9659,7 +9660,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -177.02997, y: 87.29999}
+  m_AnchoredPosition: {x: -177.03003, y: 87.299805}
   m_SizeDelta: {x: 243.10498, y: 90.1225}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1431771912
@@ -9976,7 +9977,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 15
   m_fontSizeMax: 150
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -10077,7 +10078,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\xD6\u011Freticiye ho\u015Fgeldin!\nAsl\u0131nda oyun \xE7ok basit hadi
+  m_text: "\xD6\u011Freticiye ho\u015Fgeldin!\nAsl\u0131nda oyun \xE7ok basit, hadi
     ba\u015Flayal\u0131m."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d7ee88d9062bf4fe5b6a98057ffda7cb, type: 2}
@@ -10112,7 +10113,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 15
   m_fontSizeMax: 150
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -10190,7 +10191,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.00390625, y: -8.9001465}
+  m_AnchoredPosition: {x: 0.00390625, y: -8.900391}
   m_SizeDelta: {x: -110.962585, y: -352.43597}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1483207601
@@ -10213,7 +10214,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Belli bir s\xFCre enerji harcaman s\u0131f\u0131ra iner."
+  m_text: "Belli bir s\xFCre enerjin s\u0131n\u0131rs\u0131z olur!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d7ee88d9062bf4fe5b6a98057ffda7cb, type: 2}
   m_sharedMaterial: {fileID: -4649764130494338027, guid: d7ee88d9062bf4fe5b6a98057ffda7cb,
@@ -10247,7 +10248,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 15
   m_fontSizeMax: 150
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -10489,7 +10490,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 15
   m_fontSizeMax: 150
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -10826,7 +10827,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -177.02997, y: 87.29999}
+  m_AnchoredPosition: {x: -177.03003, y: 87.299805}
   m_SizeDelta: {x: 243.10498, y: 90.1225}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1561811651
@@ -11028,7 +11029,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 15
   m_fontSizeMax: 150
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -11251,7 +11252,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -177.02997, y: 87.29999}
+  m_AnchoredPosition: {x: -177.03003, y: 87.299805}
   m_SizeDelta: {x: 243.10498, y: 90.1225}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1647699502
@@ -11566,7 +11567,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -177.02997, y: 87.29999}
+  m_AnchoredPosition: {x: -177.03003, y: 87.299805}
   m_SizeDelta: {x: 243.10498, y: 90.1225}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1702587426
@@ -11734,7 +11735,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Yetenekler oyun i\xE7inde ilerledik\xE7e ortaya \xE7\u0131karlar. Marketten
+  m_text: "Yetenekler, oyun i\xE7inde ilerledik\xE7e ortaya \xE7\u0131karlar. Marketten
     onlar\u0131n \xF6zelliklerini veya s\xFCrelerini y\xFCkseltebilirsin."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d7ee88d9062bf4fe5b6a98057ffda7cb, type: 2}
@@ -11769,7 +11770,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 15
   m_fontSizeMax: 150
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -11813,6 +11814,80 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1704481949}
   m_CullTransparentMesh: 0
+--- !u!1001 &1707685535
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 458582185129277969, guid: 426f431f14a41c84aa50296f55a97bbf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 458582185129277969, guid: 426f431f14a41c84aa50296f55a97bbf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 458582185129277969, guid: 426f431f14a41c84aa50296f55a97bbf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 458582185129277969, guid: 426f431f14a41c84aa50296f55a97bbf,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 458582185129277969, guid: 426f431f14a41c84aa50296f55a97bbf,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 458582185129277969, guid: 426f431f14a41c84aa50296f55a97bbf,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 458582185129277969, guid: 426f431f14a41c84aa50296f55a97bbf,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 458582185129277969, guid: 426f431f14a41c84aa50296f55a97bbf,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 458582185129277969, guid: 426f431f14a41c84aa50296f55a97bbf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 458582185129277969, guid: 426f431f14a41c84aa50296f55a97bbf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 458582185129277969, guid: 426f431f14a41c84aa50296f55a97bbf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 458582185129277971, guid: 426f431f14a41c84aa50296f55a97bbf,
+        type: 3}
+      propertyPath: m_Name
+      value: GameManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 458582185129277971, guid: 426f431f14a41c84aa50296f55a97bbf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 426f431f14a41c84aa50296f55a97bbf, type: 3}
 --- !u!1 &1761604955
 GameObject:
   m_ObjectHideFlags: 0
@@ -11905,7 +11980,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 15
   m_fontSizeMax: 150
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -12184,13 +12259,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 49.3
+  m_fontSize: 47.9
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 15
   m_fontSizeMax: 150
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -12400,7 +12475,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 15
   m_fontSizeMax: 150
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -12525,7 +12600,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1857580086
 GameObject:
@@ -12562,7 +12637,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0.0037842, y: -42.431885}
+  m_AnchoredPosition: {x: 0.0037842, y: -42.43164}
   m_SizeDelta: {x: 141.1458, y: 201.83878}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1857580088
@@ -12637,7 +12712,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.00390625, y: -8.300049}
+  m_AnchoredPosition: {x: 0.00390625, y: -8.299805}
   m_SizeDelta: {x: -110.962585, y: -351.16766}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1868895817
@@ -12660,7 +12735,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Bir miktar enerjini al\u0131r!"
+  m_text: "Enerjini bir miktar azalt\u0131r!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d7ee88d9062bf4fe5b6a98057ffda7cb, type: 2}
   m_sharedMaterial: {fileID: -4649764130494338027, guid: d7ee88d9062bf4fe5b6a98057ffda7cb,
@@ -12694,7 +12769,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 15
   m_fontSizeMax: 150
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -12773,7 +12848,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0.0037842, y: -42.431885}
+  m_AnchoredPosition: {x: 0.0037842, y: -42.43164}
   m_SizeDelta: {x: 141.1458, y: 201.83878}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1872768497
@@ -13019,7 +13094,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 15
   m_fontSizeMax: 150
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -13118,7 +13193,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 1b5543f93fc9444d79e5df85bfe8fd74, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
@@ -13269,7 +13344,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 15
   m_fontSizeMax: 150
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -13313,36 +13388,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1967335947}
   m_CullTransparentMesh: 0
---- !u!1 &1996737079
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1996737080}
-  m_Layer: 0
-  m_Name: TutorialItemSpawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1996737080
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1996737079}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.084305, y: -0.40285808, z: -3.7307427}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2025145481
 GameObject:
   m_ObjectHideFlags: 0
@@ -13456,7 +13501,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -177.02997, y: 87.29999}
+  m_AnchoredPosition: {x: -177.03003, y: 87.299805}
   m_SizeDelta: {x: 243.10498, y: 90.1225}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2045307874
@@ -13624,7 +13669,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Art\u0131k d\xFC\u015Fmanlarla kar\u015F\u0131la\u015Fma vakti. D\xFC\u015Fmanlar
+  m_text: "Art\u0131k d\xFC\u015Fmanlarla kar\u015F\u0131la\u015Fma vakti. D\xFC\u015Fmanlar,
     duvara iki kez \xE7arpt\u0131klar\u0131nda yok olurlar. Birbirlerine \xE7arpt\u0131klar\u0131nda
     b\xFCy\xFCk d\xFC\u015Fman olu\u015Fur.\nDikkat et!"
   m_isRightToLeft: 0
@@ -13660,7 +13705,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 15
   m_fontSizeMax: 150
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -13738,7 +13783,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -72.81, y: -49.999756}
+  m_AnchoredPosition: {x: -72.81, y: -50}
   m_SizeDelta: {x: 86.749405, y: 86.749405}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2091325855
@@ -13870,7 +13915,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 15
   m_fontSizeMax: 150
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -14005,7 +14050,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 15
   m_fontSizeMax: 150
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535

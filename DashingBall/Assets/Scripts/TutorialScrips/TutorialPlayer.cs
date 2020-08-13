@@ -18,7 +18,7 @@ public class TutorialPlayer : MonoBehaviour
 
     private void Start()
     {
-        GetComponent<SpriteRenderer>().sprite = SkinManager.instance.ShopSkinList[8].image;
+        GetComponent<SpriteRenderer>().sprite = SkinManager.instance.ShopSkinList[13].image;
         PlayerManager.score = 0;
         PlayerManager.maxHealth = 100;
         PlayerManager.currentHealth = 100;
@@ -36,7 +36,8 @@ public class TutorialPlayer : MonoBehaviour
         if (canMove() && Input.GetKeyDown(KeyCode.Mouse0) && !TutorialPlayerReflection.IsPointerOverUIObject() && TutorialManager.tutorialStarted  ||
         canMove() && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began && !TutorialPlayerReflection.IsPointerOverUIObject() && TutorialManager.tutorialStarted)
         {
-            FindObjectOfType<AudioManager>().Play(dashs[Random.Range(0, 3)]);
+            if (!TutorialManager.silentMode)
+                FindObjectOfType<AudioManager>().Play(dashs[Random.Range(0, 3)]);
             Instantiate(dashEffect, transform.position, Quaternion.identity);
 
             if (TutorialManager.scoreSystemOn)
@@ -134,6 +135,7 @@ public class TutorialPlayer : MonoBehaviour
         if (collision.gameObject.CompareTag("Hitbox"))
         {
             Instantiate(crashEffect, collision.contacts[0].point, Quaternion.identity);
+            if(!TutorialManager.silentMode)
             FindObjectOfType<AudioManager>().Play("PlayerBounce");
 
         }

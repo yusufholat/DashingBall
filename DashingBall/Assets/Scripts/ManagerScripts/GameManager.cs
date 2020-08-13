@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public static bool gameStarded;
     public static bool gameOver = false;
 
-    public static bool tutorialStarted;
+    //public static bool tutorialStarted;
 
     public static bool musicOn;
     public static bool vibrationOn = true;
@@ -25,9 +25,9 @@ public class GameManager : MonoBehaviour
 
     public Color menuColor;
 
-    public static bool tutorialInstantieted = false;
+    public static bool tutorialPlayerInstantiete = true;
 
-    public static int defaultItemCounts = 15;
+    public static int defaultItemCounts = 10;
     public static int defaultTotalCoin = 1000;
 
     public static GameManager instance;
@@ -37,25 +37,22 @@ public class GameManager : MonoBehaviour
             instance = this;
         else Destroy(gameObject);
 
-        if ((PlayerPrefs.GetInt("ComplateTutorial", 0) == 0))
-        {
-            SceneManager.LoadScene("Tutorial");
-            PlayerPrefs.SetInt("ComplateTutorial", 1);
-            FindObjectOfType<AudioManager>().Stop("MenuMusic");
-            MenuMusicPlaying = true;
-            tutorialStarted = true;
-            tutorialInstantieted = true;
-        }
         DontDestroyOnLoad(gameObject);
     }
 
     void Start()
     {
+        MenuMusicPlaying = true;
+        if ((PlayerPrefs.GetInt("ComplateTutorial", 0) == 1))
+        {
+            SceneManager.LoadScene("Menu");
+            MenuMusicPlaying = false;
+            tutorialPlayerInstantiete = false;
+        }
+
         gameStarded = false;
-        tutorialStarted = false;
         musicOn = (PlayerPrefs.GetInt("MusicOn", 1) != 0);
         Camera.main.backgroundColor = menuColor;
-
     }
 
     private void Update()
@@ -72,6 +69,7 @@ public class GameManager : MonoBehaviour
             {
                 if (!endLevel)
                 {
+                    if(!gameOver)
                     setGameDifficulty(gametime);
                     nextTime += rate;
                 }
@@ -93,17 +91,17 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        gameOver = true;
         Time.timeScale = 0.25f;
-        gameOver = false;
-
+        FindObjectOfType<AudioManager>().Play("GameOver");
         if (vibrationOn) Handheld.Vibrate();
 
-        FindObjectOfType<AudioManager>().Play("GameOver");
         SetPlayerPrefs();
+        UIManager.instance.ShowGameOver();
+        ResetItemCounts();
+
         ItemManager.instance.RefreshList();
     }
-
-
 
     public void restartGame()
     {
@@ -178,11 +176,16 @@ public class GameManager : MonoBehaviour
 
     void SetPlayerPrefs()
     {
+        PlayerPrefs.SetInt("PlayedGames", PlayerPrefs.GetInt("PlayedGames", 0) + 1);
+
         if (PlayerManager.score > PlayerPrefs.GetInt("HighScore", 0))
+        {
             PlayerPrefs.SetInt("HighScore", PlayerManager.score);
+            PlayerGPSManager.instance.UpdateLeaderBoardScore(PlayerManager.score);
+        }
 
         if (PlayerManager.score + PlayerPrefs.GetInt("TotalCoin", defaultTotalCoin) > 9999)
-            PlayerPrefs.SetInt("TotalCoin", 999);
+            PlayerPrefs.SetInt("TotalCoin", 9999);
         else PlayerPrefs.SetInt("TotalCoin", PlayerManager.score + PlayerPrefs.GetInt("TotalCoin", defaultTotalCoin));
 
         if (PlayerManager.countEnergy + PlayerPrefs.GetInt("energy", defaultItemCounts) > 999)
@@ -219,6 +222,8 @@ public class GameManager : MonoBehaviour
         gametime = 0;
         gameDifficulty = 1;
         EnemySpawner.spawnRate = 2.5f;
+        PlayerManager.goldenEnergyPower = false;
+        PlayerManager.timeFreezePower = false;
         endLevel = false;
         Camera.main.backgroundColor = menuColor;
     }

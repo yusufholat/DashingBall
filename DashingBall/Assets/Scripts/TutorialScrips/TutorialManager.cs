@@ -23,6 +23,8 @@ public class TutorialManager : MonoBehaviour
     public GameObject enemySystemPopup;
     public GameObject itemSystemPopup;
 
+    public static bool silentMode = false;
+
     public GameObject energyInfo;
     public GameObject antiEnergyInfo;
     public GameObject GoldenEnergyInfo;
@@ -70,6 +72,7 @@ public class TutorialManager : MonoBehaviour
 
     public void ShowPlayerControllerPopup()
     {
+        PlayerPrefs.SetInt("ComplateTutorial", 1);
         startPopup.GetComponent<Animator>().SetTrigger("closepopup");
         playerControllerPopup.SetActive(true);
     }
@@ -128,6 +131,8 @@ public class TutorialManager : MonoBehaviour
     {
         yield return new WaitForSeconds(15f);
         itemSystemPopup.SetActive(true);
+        silentMode = true;
+        Time.timeScale = 0.25f;
     }
 
     public void ShowEnergyInfo()
@@ -185,16 +190,18 @@ public class TutorialManager : MonoBehaviour
     }
     IEnumerator LoadGoToGame()
     {
+        Time.timeScale = 1f;
         scenetransition.SetTrigger("tutorialend");
         yield return new WaitForSeconds(1f);
         GameManager.MenuMusicPlaying = false;
         GameManager.gameStarded = true;
-        GameManager.tutorialInstantieted = false;
+        GameManager.tutorialPlayerInstantiete = false;
         SceneManager.LoadScene("Game");
     }
 
     public void goToMenu()
     {
+        PlayerPrefs.SetInt("ComplateTutorial", 1);
         startPopup.GetComponent<Animator>().SetTrigger("closepopup");
         StartCoroutine(LoadGoToMenu());
     }
@@ -202,7 +209,7 @@ public class TutorialManager : MonoBehaviour
     {
         scenetransition.SetTrigger("tutorialquit");
         yield return new WaitForSeconds(1f);
-        GameManager.tutorialInstantieted = false;
+        GameManager.tutorialPlayerInstantiete = false;
         GameManager.MenuMusicPlaying = false;
         SceneManager.LoadScene("Menu");
     }

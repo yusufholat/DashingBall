@@ -19,10 +19,6 @@ public static class ButtonExtension
 
 public class ShopManager : MonoBehaviour
 {
-
-    //List<ShopSkin> ShopSkinList;
-    //List<Item> ShopItemList;
-
     public GameObject shopSkinTemplate;
     public Transform shopSkinScrollView;
 
@@ -49,7 +45,7 @@ public class ShopManager : MonoBehaviour
 
     void Start()
     {
-        PlayerPrefs.SetInt("skin0", 1); //set default skin true
+        PlayerPrefs.SetInt(SkinManager.instance.ShopSkinList[0].name + "Skin", 1); //set default skin true
         shopCoinText.text = PlayerPrefs.GetInt("TotalCoin", GameManager.defaultTotalCoin).ToString(); //refresh coin for cointext
     }
 
@@ -80,7 +76,7 @@ public class ShopManager : MonoBehaviour
             buyButton = skin.transform.GetChild(1).GetComponent<Button>();
             selectButton = skin.transform.GetChild(2).GetComponent<Button>();
 
-            buyButton.gameObject.SetActive(PlayerPrefs.GetInt("skin" + i, 0) == 0);
+            buyButton.gameObject.SetActive(PlayerPrefs.GetInt(SkinManager.instance.ShopSkinList[i].name + "Skin", 0) == 0);
 
 
             if (buyButton.gameObject.activeSelf == true)
@@ -114,7 +110,7 @@ public class ShopManager : MonoBehaviour
 
             shopSkinScrollView.GetChild(itemIndex).GetChild(1).GetComponent<Button>().gameObject.SetActive(false);
             shopSkinScrollView.GetChild(itemIndex).GetChild(2).GetComponent<Button>().gameObject.SetActive(true);
-            PlayerPrefs.SetInt("skin" + itemIndex, 1); //set player prefs for bought skin
+            PlayerPrefs.SetInt(SkinManager.instance.ShopSkinList[itemIndex].name + "Skin", 1); //set player prefs for bought skin
             RefreshGoldAndItemCounts(); // refresh gold and item counts for shop panel ui
 
 

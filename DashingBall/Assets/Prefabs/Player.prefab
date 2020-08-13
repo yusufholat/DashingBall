@@ -36,7 +36,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3690313438541755427}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.3, y: -11.09, z: 0}
+  m_LocalPosition: {x: 11.21, y: -7.69, z: 0}
   m_LocalScale: {x: 0.15, y: 0.15, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -179,31 +179,31 @@ TrailRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
+        time: 0.005420685
+        value: 0.96341515
+        inSlope: -0.00000059929505
+        outSlope: -0.00000059929505
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
-        outWeight: 0.33333334
+        outWeight: 0.99999994
       - serializedVersion: 3
         time: 1
         value: 0
-        inSlope: 0
-        outSlope: 0
+        inSlope: -0.105882324
+        outSlope: -0.105882324
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0
+        inWeight: 0.23160781
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 0.78431374}
-      key1: {r: 1, g: 1, b: 1, a: 0}
-      key2: {r: 0, g: 0, b: 0, a: 0}
+      key0: {r: 0.9339623, g: 0.9339623, b: 0.9339623, a: 0.78431374}
+      key1: {r: 0.9333334, g: 0.9333334, b: 0.9333334, a: 0}
+      key2: {r: 1, g: 1, b: 1, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
@@ -211,7 +211,7 @@ TrailRenderer:
       key7: {r: 0, g: 0, b: 0, a: 0}
       ctime0: 0
       ctime1: 65535
-      ctime2: 0
+      ctime2: 65535
       ctime3: 0
       ctime4: 0
       ctime5: 0
@@ -232,7 +232,7 @@ TrailRenderer:
     numCapVertices: 0
     alignment: 0
     textureMode: 0
-    shadowBias: 0.5
+    shadowBias: 0
     generateLightingData: 0
   m_MinVertexDistance: 0
   m_Autodestruct: 0
@@ -326,12 +326,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3690313438541755427}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15b8a9e5ed8acf04e8340c2806931095, type: 3}
+  m_Script: {fileID: 11500000, guid: f0731d94fb3204392a0c19bf5d2a18a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   timeFreezeArea: {fileID: 4466816145287429144, guid: a64fe3fae79a144b48bf1109a45d14f5,
-    type: 3}
-  timeFreeze: {fileID: 1975166180986265828, guid: bfdd5c054df3640409c5fbb8d3a862f7,
     type: 3}
 --- !u!114 &183869869238781017
 MonoBehaviour:

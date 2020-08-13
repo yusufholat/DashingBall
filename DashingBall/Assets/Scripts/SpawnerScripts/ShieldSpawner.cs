@@ -6,7 +6,6 @@ public class ShieldSpawner : MonoBehaviour
 {
     public GameObject shield;
     public ParticleSystem infoEffect;
-    private MeshCollider mesh;
 
     Vector2 whereToSpawn;
     float randX, randY;
@@ -17,9 +16,20 @@ public class ShieldSpawner : MonoBehaviour
     float spawnTime;
     float nextSpawn = 0;
 
+    float minX, maxX, minY, maxY, offset = 1.5f, offsetTop = 5f;
+
+    private void Awake()
+    {
+        var lowerLeft = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 0));
+        var upperRight = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0));
+        minX = lowerLeft.x;
+        maxX = upperRight.x;
+        maxY = upperRight.y;
+        minY = lowerLeft.y;
+    }
+
     void Start()
     {
-        mesh = GetComponent<MeshCollider>();
         spawnTime = Random.Range(minSpawnRate, maxSpawnRate);
     }
 
@@ -44,8 +54,8 @@ public class ShieldSpawner : MonoBehaviour
 
     IEnumerator Spawn()
     {
-        randX = Random.Range(mesh.bounds.min.x, mesh.bounds.max.x);
-        randY = Random.Range(mesh.bounds.min.y, mesh.bounds.max.y);
+        randX = Random.Range(minX + offset, maxX - offset);
+        randY = Random.Range(minY + offset, maxY - offsetTop);
         whereToSpawn = new Vector2(randX, randY);
         Instantiate(infoEffect, whereToSpawn, Quaternion.identity);
         yield return new WaitForSeconds(2f);

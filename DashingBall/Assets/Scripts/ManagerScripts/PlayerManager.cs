@@ -15,7 +15,7 @@ public class PlayerManager : MonoBehaviour
     public static float currentHealth;
     public static int score;
 
-    public static int totalCoin;
+    public static int totalCoin = 0;
     public static int countEnergy = 0;
     public static int countAntiEnergy = 0;
     public static int countGoldenEnergy = 0;
@@ -33,16 +33,13 @@ public class PlayerManager : MonoBehaviour
             instance = this;
         else            
             Destroy(gameObject);
-
-        if(!GameManager.tutorialInstantieted)
-        instantiatedPlayer = Instantiate(playerTemplate, new Vector2(0, -4), Quaternion.identity);
-
-        DontDestroyOnLoad(gameObject);
     }
 
     void Start()
     {
-        totalCoin = PlayerPrefs.GetInt("TotalCoin", 1000);
+        if (!GameManager.tutorialPlayerInstantiete)
+            instantiatedPlayer = Instantiate(playerTemplate, new Vector2(0, -4), Quaternion.identity);
+        totalCoin = PlayerPrefs.GetInt("TotalCoin", GameManager.defaultTotalCoin);
     }
 
 
@@ -71,9 +68,6 @@ public class PlayerManager : MonoBehaviour
         EffectManager.PlayAnim("DefaultEffect");
         goldenEnergyPower = false;
     }
-
-
-
 
     public void takeBlackHole()
     {

@@ -77,11 +77,6 @@ public class ReflectionController : MonoBehaviour
             movePos = Vector2.Reflect(lastVelocity, wallNormal).normalized;
             movePos *= distanceSpeed;
         }
-
-        if (collision.gameObject.CompareTag("GameOver") || collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("BigEnemy"))
-        {
-            GameManager.gameOver = true;
-        }
     }
 
     private void OnTriggerStay2D(Collider2D collision)

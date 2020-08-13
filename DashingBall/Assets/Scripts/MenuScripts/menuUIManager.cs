@@ -27,15 +27,26 @@ public class menuUIManager : MonoBehaviour
     public GameObject shopSkinTopPanel;
     public GameObject shopSkinBottomPanel;
     public GameObject shopUpgradeTopPanel;
+    public GameObject shopUpgradeInfoPanel;
     public GameObject shopUpgradeBottomPanel;
+    public GameObject donateMenuTopPanel;
+    public GameObject donateMenuBottomPanel;
+
+    public GameObject donateComplatePopup;
 
     bool settingsMenuIsOpen = false;
     bool shopMenuIsOpen = false;
 
     public static bool shopIsOpen = false;
 
+    public static menuUIManager instance;
+
     private void Awake()
     {
+        if (instance == null)
+            instance = this;
+        else Destroy(gameObject);
+
         settingMenuAnimator = SettingsMenu.GetComponent<Animator>();
         shopMenuAnimator = ShopMenu.GetComponent<Animator>();
         transition = GetComponent<Animator>();
@@ -66,8 +77,7 @@ public class menuUIManager : MonoBehaviour
         yield return new WaitForSeconds(1f);
         FindObjectOfType<AudioManager>().Stop("MenuMusic");
         GameManager.MenuMusicPlaying = true;
-        GameManager.tutorialStarted = true;
-        GameManager.tutorialInstantieted = true;
+        GameManager.tutorialPlayerInstantiete = true;
         SceneManager.LoadScene("Tutorial");
     }
 
@@ -183,10 +193,58 @@ public class menuUIManager : MonoBehaviour
     {
         shopUpgradeTopPanel.gameObject.tag = "ShopOutsideArea";
         shopUpgradeTopPanel.GetComponent<BoxCollider2D>().isTrigger = true;
+        shopUpgradeInfoPanel.gameObject.tag = "ShopOutsideArea";
+        shopUpgradeInfoPanel.GetComponent<BoxCollider2D>().isTrigger = true;
         shopUpgradeBottomPanel.gameObject.tag = "ShopOutsideArea";
         shopUpgradeBottomPanel.GetComponent<BoxCollider2D>().isTrigger = true;
 
         transition.SetTrigger("closeupgrade");
         shopIsOpen = false;
+    }
+
+    public void openDonateMenu()
+    {
+        transition.SetTrigger("opendonate");
+        if (settingsMenuIsOpen == true)
+        {
+            settingMenuAnimator.SetTrigger("off");
+            settingsMenuIsOpen = false;
+        }
+        if (shopMenuIsOpen == true)
+        {
+            shopMenuAnimator.SetTrigger("off");
+            shopMenuIsOpen = false;
+        }
+        shopIsOpen = true;
+    }
+
+    public void closeDonateMenu()
+    {
+        donateMenuTopPanel.gameObject.tag = "ShopOutsideArea";
+        donateMenuTopPanel.GetComponent<BoxCollider2D>().isTrigger = true;
+        donateMenuBottomPanel.gameObject.tag = "ShopOutsideArea";
+        donateMenuBottomPanel.GetComponent<BoxCollider2D>().isTrigger = true;
+
+        transition.SetTrigger("closedonate");
+        shopIsOpen = false;
+    }
+
+    public void ShowDonateComplatePopup()
+    {
+        donateComplatePopup.GetComponent<Animator>().SetTrigger("openpopup");
+    }
+    public void CloseDonatePopup()
+    {
+        donateComplatePopup.GetComponent<Animator>().SetTrigger("closepopup");
+    }
+
+    public void LeaderboardOn()
+    {
+        PlayerGPSManager.instance.ShowLeaderBoard();
+    }
+
+    public void rateUs()
+    {
+        Application.OpenURL("market://details?id=com.ziroogames.dashingball");
     }
 }

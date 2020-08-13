@@ -120,7 +120,7 @@ public class Player : MonoBehaviour
         {
             Destroy(gameObject);
             Instantiate(deadEffect, transform.position, Quaternion.identity);
-            GameManager.gameOver = true;
+            GameManager.instance.GameOver();
         }
         if (collision.gameObject.CompareTag("Hitbox"))
         {
