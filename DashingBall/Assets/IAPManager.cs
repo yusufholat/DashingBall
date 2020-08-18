@@ -93,7 +93,7 @@ public class IAPManager : MonoBehaviour, IStoreListener
     {
         if (instance != null) { Destroy(gameObject); return; }
         instance = this;
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
     }
 
     void BuyProductID(string productId)

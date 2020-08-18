@@ -61,7 +61,6 @@ public class menuUIManager : MonoBehaviour
         transition.SetTrigger("end");
         yield return new WaitForSeconds(1f);
         FindObjectOfType<AudioManager>().Stop("MenuMusic");
-        GameManager.MenuMusicPlaying = false;
         GameManager.gameStarded = true;
         SceneManager.LoadScene("Game");
     }
@@ -76,7 +75,6 @@ public class menuUIManager : MonoBehaviour
         transition.SetTrigger("tutorial");
         yield return new WaitForSeconds(1f);
         FindObjectOfType<AudioManager>().Stop("MenuMusic");
-        GameManager.MenuMusicPlaying = true;
         GameManager.tutorialPlayerInstantiete = true;
         SceneManager.LoadScene("Tutorial");
     }

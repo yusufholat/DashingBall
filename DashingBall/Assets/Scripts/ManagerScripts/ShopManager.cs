@@ -129,6 +129,9 @@ public class ShopManager : MonoBehaviour
 
     void ShopItemSelectClicked(int itemIndex)
     {
+        PlayerManager.instance.updateCurrentSkin(itemIndex); //selected current item index for player prefs
+        PlayerManager.instance.RefreshSkin();
+        
         for (int i = 0; i < SkinManager.instance.ShopSkinList.Count; i++)
         {
             selectButton = shopSkinScrollView.GetChild(i).GetChild(2).GetComponent<Button>();
@@ -141,8 +144,6 @@ public class ShopManager : MonoBehaviour
             }
         }
 
-        PlayerManager.instance.updateCurrentSkin(itemIndex); //selected current item index for player prefs
-        PlayerManager.instance.RefreshSkin();
     }
 
 

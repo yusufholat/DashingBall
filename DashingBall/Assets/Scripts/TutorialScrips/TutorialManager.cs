@@ -193,7 +193,6 @@ public class TutorialManager : MonoBehaviour
         Time.timeScale = 1f;
         scenetransition.SetTrigger("tutorialend");
         yield return new WaitForSeconds(1f);
-        GameManager.MenuMusicPlaying = false;
         GameManager.gameStarded = true;
         GameManager.tutorialPlayerInstantiete = false;
         SceneManager.LoadScene("Game");
@@ -209,8 +208,8 @@ public class TutorialManager : MonoBehaviour
     {
         scenetransition.SetTrigger("tutorialquit");
         yield return new WaitForSeconds(1f);
+        GameManager.instance.switchMenuMusic();
         GameManager.tutorialPlayerInstantiete = false;
-        GameManager.MenuMusicPlaying = false;
         SceneManager.LoadScene("Menu");
     }
 }

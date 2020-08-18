@@ -90,6 +90,8 @@ public class UpgradeManager : MonoBehaviour
     {
         if (HasEnoughGold(index, ItemManager.instance.ItemList[index].cost))
         {
+            upgradeItemScrollView.GetChild(index).GetComponent<Animator>().SetTrigger("upgrade");
+
             ItemManager.instance.ItemList[index].nextLevel(); //set next level for upgraded item
 
             ItemManager.instance.RefreshList(); //refresh counts,levels, costs, cooldowns
@@ -108,7 +110,7 @@ public class UpgradeManager : MonoBehaviour
             else FindObjectOfType<AudioManager>().Play("Upgrade");
 
 
-            upgradeItemScrollView.GetChild(index).GetComponent<Animator>().SetTrigger("upgrade");
+            
         }
         else
         {
@@ -204,7 +206,7 @@ public class UpgradeManager : MonoBehaviour
             upgradeItemScrollView.GetChild(index).GetChild(2).GetChild(3).gameObject.SetActive(false);
             upgradeItemScrollView.GetChild(index).GetChild(2).GetChild(2).gameObject.SetActive(false);
             upgradeItemScrollView.GetChild(index).GetChild(1).GetComponent<Button>().interactable = false;
-            upgradeItemScrollView.GetChild(index).GetComponent<Animator>().SetTrigger("maxeffect");
+            upgradeItemScrollView.GetChild(index).GetComponent<Animator>().SetBool("maxeffect", true);
 
         }
         else

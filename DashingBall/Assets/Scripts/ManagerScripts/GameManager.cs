@@ -14,7 +14,6 @@ public class GameManager : MonoBehaviour
 
     public static bool musicOn;
     public static bool vibrationOn = true;
-    public static bool MenuMusicPlaying = false;
 
     int nextTime = 0, rate = 30;
     float gametime = 0;
@@ -42,26 +41,29 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        MenuMusicPlaying = true;
-        if ((PlayerPrefs.GetInt("ComplateTutorial", 0) == 1))
-        {
-            SceneManager.LoadScene("Menu");
-            MenuMusicPlaying = false;
-            tutorialPlayerInstantiete = false;
-        }
-
         gameStarded = false;
         musicOn = (PlayerPrefs.GetInt("MusicOn", 1) != 0);
+
+        if ((PlayerPrefs.GetInt("ComplateTutorial", 0) == 1))
+        {
+            tutorialPlayerInstantiete = false;
+            SceneManager.LoadScene("Menu");
+            switchMenuMusic();
+        }
+
         Camera.main.backgroundColor = menuColor;
+    }
+
+    public void switchMenuMusic() {
+        if (musicOn == true && gameStarded == false)
+        {
+            FindObjectOfType<AudioManager>().Play("MenuMusic");
+        }
+        else FindObjectOfType<AudioManager>().Stop("MenuMusic");
     }
 
     private void Update()
     {
-        if(musicOn == true && gameStarded == false && MenuMusicPlaying == false)
-        {
-            FindObjectOfType<AudioManager>().Play("MenuMusic");
-            MenuMusicPlaying = true;
-        }
         if (gameStarded)
         {
             gametime += Time.deltaTime;
@@ -98,13 +100,14 @@ public class GameManager : MonoBehaviour
 
         SetPlayerPrefs();
         UIManager.instance.ShowGameOver();
-        ResetItemCounts();
+        
 
         ItemManager.instance.RefreshList();
     }
 
     public void restartGame()
     {
+        ResetItemCounts();
         resetGame();
         SceneManager.LoadScene("Game");       
     }
@@ -113,8 +116,10 @@ public class GameManager : MonoBehaviour
 
     public void goToMenu()
     {
+        ResetItemCounts();
         resetGame();
         gameStarded = false;
+        switchMenuMusic();
         SceneManager.LoadScene("Menu");
     }
 
@@ -133,7 +138,7 @@ public class GameManager : MonoBehaviour
         else if (gameTime > 90)
         {
             AudioManager.instance.Play("LevelUp");
-            EnemySpawner.spawnRate = 1f;
+            EnemySpawner.spawnRate = 1.1f;
             gameDifficulty = 4;
             Camera.main.backgroundColor = collors[3];
         }

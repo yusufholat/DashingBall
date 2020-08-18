@@ -11,13 +11,15 @@ public class ItemManager : MonoBehaviour
 
     private void Awake()
     {
-
-        //PlayerPrefs.SetInt("energy", 500);
-        //PlayerPrefs.SetInt("antienergy", 500);
-        //PlayerPrefs.SetInt("goldenenergy", 500);
-        //PlayerPrefs.SetInt("blackhole", 500);
-        //PlayerPrefs.SetInt("timefreeze", 500);
-        //PlayerPrefs.SetInt("shield", 500);
+        //PlayerPrefs.SetInt("energy", 553);
+        //PlayerPrefs.SetInt("antienergy", 473);
+        //PlayerPrefs.SetInt("goldenenergy", 366);
+        //PlayerPrefs.SetInt("blackhole", 359);
+        //PlayerPrefs.SetInt("timefreeze", 207);
+        //PlayerPrefs.SetInt("shield", 105);
+        //PlayerPrefs.SetInt("TotalCoin", 9565);
+        //PlayerPrefs.SetInt("HighScore", 2328);
+        //PlayerPrefs.SetInt("PlayedGames", 157);
 
         RefreshList();
 

@@ -42,6 +42,8 @@ public class UIManager : MonoBehaviour
     {
         scoreTextUI.SetActive(false);
 
+        gameOverMenu.SetActive(true);
+
         gameOverScoreText.text = PlayerManager.score.ToString();
         gameOverHighScoreText.text = PlayerPrefs.GetInt("HighScore", 0).ToString();
 
@@ -52,7 +54,6 @@ public class UIManager : MonoBehaviour
         countTimeFreezeText.text = "x" + PlayerManager.countTimeFreeze.ToString();
         countShieldText.text = "x" + PlayerManager.countShield.ToString();
 
-        gameOverMenu.SetActive(true);
     }
 
     public void restartGame()
